@@ -190,7 +190,7 @@
                         </p>
                     </div>
 
-                    <form action="#" class="w-[25rem]">
+                    <form action="#" class="w-[25rem]" x-data="signIn()">
                         <h2 class="mt-6 text-2xl font-bold text-black sm:text-3xl md:text-4xl">
                             Sign in
                         </h2>
@@ -206,12 +206,18 @@
                             </div>
 
                             <div class="col-span-6">
-                                <label for="Password" class="block text-sm font-medium text-gray-700">
-                                    Password
-                                </label>
+                                <div class="relative">
 
-                                <input type="password" id="Password" name="password"
-                                    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+                                    <label for="Password" class="block text-sm font-medium text-gray-700">
+                                        Password
+                                    </label>
+                                    <i x-on:mousedown="show = !show"  :class="{'hidden' : show, 'block': !show, 'hidden' : password == ''}" class="fa-solid fa-eye text-black absolute top-6 inset-y-0 right-4 flex items-center pl-3"
+                                         x-cloak></i>
+                                    <i x-on:mouseup="show = !show" :class="{'hidden' : !show, 'block': show}" class="fa-solid fa-eye-slash text-black absolute top-6 inset-y-0 right-4 flex items-center pl-3"
+                                       x-cloak></i>
+                                    <input x-model="password" :type="show ? 'text' : 'password'" type="password" id="Password" name="password"
+                                        class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" />
+                                </div>
                             </div>
                             <div class="col-span-6">
                                 <label for="remember_me" class="flex gap-4">
@@ -241,6 +247,16 @@
             </main>
         </div>
     </section>
+    <script>
+        function signIn() {
+            return {
+                pageTitle: 'Sign In',
+                show: false,
+                email: '',
+                password:''
+            }
+        }
+    </script>
 
     <script src="../assets/js/app.js"></script>
 </body>
