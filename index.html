@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title x-data="index()" x-text="title + ' - ' + pageTitle"></title>
+    <title x-data="signIn()" x-text="title + ' - ' + pageTitle"></title>
     <meta name="keywords" :content="keywords" />
     <meta name="twitter:description" :content="description">
     <meta name="twitter:title" :content="title">
-    <meta x-data="index()" property="og:url" :content="url + pageTitle.split(' ').join('-').toLowerCase() + '.html'" />
+    <meta x-data="signIn()" property="og:url" :content="url + pageTitle.split(' ').join('-').toLowerCase() + '.html'" />
     <meta property="og:site_name" content="7 Express" />
     <meta property="og:type" content="website">
     <meta property="og:description" :content="description" />
