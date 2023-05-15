@@ -28,7 +28,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="bg-white dark:bg-gray-900 !m-0" x-data="index()">
+<body class="bg-gray-100 dark:bg-gray-900 !m-0" x-data="index()">
     <! --- Navigation --->
     <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -46,8 +46,8 @@
                         </svg>
                     </button>
                     <a href="#" class="flex ml-2 md:mr-24">
-                        <h1 class="block text-black dark:hidden" >BUGC</h1>
-                        <h1 class="hidden text-white dark:block" >BUGC</h1>
+                        <h1 class="block text-2xl font-bold text-black dark:hidden" >BUGC</h1>
+                        <h1 class="hidden text-2xl font-bold text-white dark:block" >BUGC</h1>
                         <!--- <img src="../assets/img/LogoW1.png" class="block w-40 dark:hidden" alt="Logo" /> --->
                         <!--- <img src="../assets/img/LogoW2.png" class="hidden w-40 dark:block" alt="Logo" /> --->
                     </a>
@@ -125,17 +125,33 @@
             <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
                 <ul class="space-y-2">
                     <li>
-                        <a href="#"
-                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <a href="/customer/"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
                             <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-gauge dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                             <span class="ml-3">Dashboard</span>
                         </a>
                     </li>
                     <li>
+                        <a href="/customer/tasks"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-list-check dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            
+                            <span class="ml-3">Tasks</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#"
-                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-people-group dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Creators</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
                             <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-truck-ramp-box dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Orders</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Delivery</span>
                             <span
                                 class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300"
                                 >3</span>
@@ -143,20 +159,33 @@
                     </li>
                     <li>
                         <a href="#"
-                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-credit-card dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Payments</span>
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-brands fa-youtube dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Inspiration</span>
 
                         </a>
                     </li>
+
+                </ul>
+                <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
                     <li>
                         <a href="#"
-                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-people-group dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
-                            <span class="flex-1 ml-3 whitespace-nowrap">Referrals</span>
-
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-regular fa-copyright dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Brands</span>
                         </a>
                     </li>
+                    
+                </ul>
+                <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-arrow-right-from-bracket dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="ml-3">Sign Out</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </div>
 
@@ -168,14 +197,7 @@
         {{ content }}
         
         </div>
-<script>
-    function index() {
-        return {
-            pageTitle: 'Dashboard Page',
-            user: { id: 1, firstname: 'Robert', lastname: 'Pinkman', email: 'jessepinkman@gmail.com', image: 'profile.jpeg', kyc: true },
-        }
-    }
-</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <script src="/assets/js/app.js"></script>
 </body>

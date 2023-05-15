@@ -2,10 +2,11 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('head', () => ({
         title: 'BUGC',
-        url:'//:link.com/',
+        url: '//:link.com/',
         version: '1.0.0',
         description: 'Something nice',
         keywords: 'something, here, everywhere',
+        currency: '₦',
     }));
 });
 
