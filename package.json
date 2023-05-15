@@ -1,12 +1,18 @@
 {
   "name": "BUGC",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "BUGC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "rm -rf _site && npx @11ty/eleventy --serve --quiet & npx tailwindcss -i ./src/assets/css/styles.css -o ./_site/assets/css/styles.css --watch",
+    "build": "rm -rf _site && ELEVENTY_ENV=production npx @11ty/eleventy && npx tailwindcss -i ./src/assets/css/styles.css -o ./_site/assets/css/styles.css --minify"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Supermx1 + SweetyCool",
+  "license": "MIT",
+  "browserslist": "defaults, not ie <= 11",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "tailwindcss": "^3.3.2"
+  }
 }

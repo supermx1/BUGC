@@ -1,0 +1,84 @@
+---
+layout: user-dashboard-layout
+title: "Dashboard"
+description: "Dashboard Page"
+---
+    <div class="p-4 mt-14">
+        <div>
+            <h3 class="text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50">Overview</h3>
+            <div
+                class="grid grid-cols-1 mt-5 overflow-hidden bg-white divide-y divide-gray-300 rounded-lg shadow dark:divide-gray-700 md:grid-cols-3 md:divide-y-0 md:divide-x">
+                <div class="px-4 py-5 sm:p-6 dark:bg-gray-800 ">
+                    <span class="text-base font-normal text-gray-900 dark:text-gray-50">Active Tasks</span>
+                    <div class="flex items-baseline justify-between mt-1 md:block lg:flex">
+                        <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                            78
+                            <span class="ml-2 text-sm font-medium text-gray-500">with 7 Inactive</span>
+                        </div>
+
+                        <div class="items-baseline px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0">
+                            <button type="button"
+                                class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                New Task
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="px-4 py-5 sm:p-6 dark:bg-gray-800">
+                    <span class="text-base font-normal text-gray-900 dark:text-gray-50">Orders</span>
+                    <div class="flex items-baseline justify-between mt-1 md:block lg:flex">
+                        <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                            89489
+                            <span class="ml-2 text-sm font-medium text-gray-500"> in total</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="px-4 py-5 sm:p-6 dark:bg-gray-800">
+                    <span class="text-base font-normal text-gray-900 dark:text-gray-50">Referrals</span>
+                    <div class="flex items-baseline justify-between mt-1 md:block lg:flex">
+                        <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                            8424
+                            <span class="ml-2 text-sm font-medium text-gray-500"> 3 new this month </span>
+                        </div>
+
+                        <div
+                            class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
+                            <!-- Heroicon name: solid/arrow-sm-down -->
+                            <svg class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-red-500"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            4.05%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-4 mt-5 md:grid-cols-3">
+                <!-- Card --->
+                <div
+                    class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Book
+                            Delivery</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Schedule nationwide and
+                        city wide
+                        deliveries.</p>
+                    <button type="button"
+                        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                        Book Now
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
