@@ -8,10 +8,9 @@ description: "Tasks Page"
     <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
     <div class="w-full">
       <!-- Card --->
-      <!--- Tabs with Dashboard Option --->
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-<!--- Table Start --->
-            <div class="relative overflow-x-auto">
+          <!--- Table Start --->
+            <div class="relative overflow-auto">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
@@ -23,16 +22,31 @@ description: "Tasks Page"
                       </div>
                     </th>
                     <th scope="col" class="px-6 py-3">
-                      Creator name
+                      id
                     </th>
                     <th scope="col" class="px-6 py-3">
                       Task
                     </th>
                     <th scope="col" class="px-6 py-3">
-                      Quote
+                      Status
                     </th>
                     <th scope="col" class="px-6 py-3">
-                      Duration
+                      Videos
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Creators
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Shipping
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Approved
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Created
                     </th>
                     <th scope="col" class="px-6 py-3">
                       Action
@@ -49,21 +63,66 @@ description: "Tasks Page"
                         <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                       </div>
                     </td>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Jack Black
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      <a href="/" class="text-blue-600 hover:text-blue-800">6865</a>
-                    </th>
-                    <td class="px-6 py-4">
-                      <span x-data="head" x-text="currency"></span>30,000
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      7328
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <a href="/" class="text-blue-600 hover:text-blue-800">Task 1</a>
                     </td>
                     <td class="px-6 py-4">
-                      60 days
+                      <span
+                        class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">Pending</span>
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      3
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span x-data="head" x-text="currency"></span>45,000
+                    </td>
+                    
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                        class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
+                        <i class="mr-1 fa-solid fa-people-group"></i>2 of 2
+                      </span>
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                        class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+                        <i class="mr-1 fa-solid fa-truck-fast"></i>1 of 2
+                      </span>
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                        class="bg-red-100 text-red-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">
+                        <i class="mr-1 fa-solid fa-check"></i>0 of 2
+                      </span>
                     </td>
                     <td class="px-6 py-4">
-                      <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#" class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Approve</a>
-                      <a data-modal-target="approve-modal" data-modal-toggle="approve-modal"  href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Reject</a>
+                        27 March 2023
+                    </td>
+                    <td class="px-6 py-4">
+                        <button id="action-btn" data-dropdown-toggle="action-btn-menu" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
+                          <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="action-btn-menu" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                              </li>
+                              <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                              </li>
+                            </ul>
+                            <div class="py-2">
+                              <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-red-500 dark:hover:text-red-400">Delete Task</a>
+                            </div>
+                        </div>
                     </td>
                   </tr>
                 </tbody>

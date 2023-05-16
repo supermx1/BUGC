@@ -73,7 +73,7 @@
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="w-8 h-8 rounded-full"
-                                    :src="user.image == '' ? 'https://avatars.dicebear.com/api/adventurer/' + user.firstname + ' ' + user.firstname + '.svg' : '../assets/img/favicon.png'"
+                                    :src="user.image == '' ? 'https://avatars.dicebear.com/api/adventurer/' + user.firstname + ' ' + user.firstname + '.svg' : '/assets/img/favicon.png'"
                                     alt="user photo">
                             </button>
                         </div>
@@ -109,7 +109,7 @@
                     </div>
                     <button type="button"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                        New Order
+                        New Task
                     </button>
 
                 </div>
@@ -152,6 +152,14 @@
                             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
                             <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-truck-ramp-box dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                             <span class="flex-1 ml-3 whitespace-nowrap">Delivery</span>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-message dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Messages</span>
                             <span
                                 class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300"
                                 >3</span>
@@ -187,6 +195,19 @@
                     </li>
                     
                 </ul>
+                <div id="dropdown-cta" class="p-4 mt-6 rounded-lg bg-blue-50 dark:bg-blue-900" role="alert">
+                    <div class="flex items-center mb-3">
+                        <span class="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">Promo</span>
+                        <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 inline-flex h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800" data-dismiss-target="#dropdown-cta" aria-label="Close">
+                            <span class="sr-only">Close</span>
+                            <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <p class="mb-3 text-sm text-blue-800 dark:text-blue-400">
+                        Create upto to 3 tasks for free if you can referrer 10 new users. Promo lasts till the 27th March 2023.
+                    </p>
+                    <a class="text-sm font-medium text-blue-800 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300" href="#">Turn new navigation off</a>
+                </div>
             </div>
 
         </aside>
