@@ -1,7 +1,7 @@
 ---
 layout: user-dashboard-layout
-title: "Tasks"
-description: "Tasks Page"
+title: "Brands"
+description: "Brands Page"
 ---
 <div class="px-3 py-6 mt-14">
   <div>
@@ -9,45 +9,10 @@ description: "Tasks Page"
       <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
       <div class="flex justify-end col-span-3 gap-4">
         <div class="flex flex-col">
-          <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
-            Filter Status
-            <i class="ml-2 fa-solid fa-chevron-down"></i>
-          </button>
-          <!-- Dropdown menu -->
-          <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Active</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Completed</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Closed</a>
-                </li>
-              </ul>
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <button id="dropdownDefaultButton2" data-dropdown-toggle="dropdown2" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
-            Sort Tasks
-            <i class="ml-2 fa-solid fa-chevron-down"></i>
-          </button>
-          <!-- Dropdown menu -->
-          <div id="dropdown2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton2">
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Newest</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oldest</a>
-                </li>
-                
-              </ul>
-          </div>
+          <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Add Brand
+                    </button>
         </div>
       </div>
     </div>
@@ -56,20 +21,10 @@ description: "Tasks Page"
       <!-- Card --->
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <!--- Table Start --->
-            <div class="relative overflow-auto">
+            <div class="relative overflow-x-auto">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    <th scope="col" class="p-4">
-                      <div class="flex items-center">
-                        <input id="checkbox-all-search" type="checkbox"
-                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                      </div>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      id
-                    </th>
                     <th scope="col" class="px-6 py-3">
                       Task
                     </th>
@@ -102,16 +57,6 @@ description: "Tasks Page"
                 <tbody>
                   <tr
                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                      <div class="flex items-center">
-                        <input id="checkbox-table-search-1" type="checkbox"
-                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                      </div>
-                    </td>
-                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      7328
-                    </td>
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       <a href="/" class="text-blue-600 hover:text-blue-800">Task 1</a>
                     </td>
@@ -270,7 +215,7 @@ description: "Tasks Page"
 <script>
   function index() {
     return {
-      pageTitle: 'Tasks',
+      pageTitle: 'Brands',
       user: {
         id: 1,
         firstname: 'Robert',

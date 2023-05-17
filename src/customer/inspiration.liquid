@@ -1,0 +1,111 @@
+---
+layout: user-dashboard-layout
+title: "Inspiration"
+description: "Inspiration Page"
+---
+
+
+
+<div class="px-3 pt-6 pb-3 mt-14">
+  <h3 class="text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+  <h3 class="mt-3 text-lg leading-5 text-gray-600 dark:text-gray-50">What UGC videos can you get?</h3>
+</div>
+<!-- Posting Video -->
+<div class="px-3 pt-3 pb-6">
+  <a href=#">
+    <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 mb-3">
+            All
+    </span>
+  </a>
+  <a href=#">
+    <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Digital Products</span>
+  </a>
+  <a href=#">
+       <span class="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500">Cosmetics</span>
+  </a> 
+</div>
+
+<div class="px-3 pt-3 pb-6">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="px-4 py-4">
+        <video src="https://static.billo.app/content-hub/Josy_Apparel_Premium.mp4"
+        poster="https://static.billo.app/content-hub/Josy_Apparel_Premium.png"
+        class="w-full aspect-[9/16] rounded-lg object-cover vid" preload="auto" playsinline loop>
+        </video>
+      </div>
+      <div class="flex items-center gap-4 px-4 py-2">
+        <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
+        <div class="font-medium dark:text-white">
+          <p>Jesse Leos</p>
+          <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-star"></i>3.5</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 text-center">
+    <button x-on:click="loading = !loading" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-gray-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+      <i class="fa-solid fa-arrows-rotate fa-spin" x-show="loading"></i>
+      <span x-show="!loading">Load More</span>
+      </button>
+  </div>
+</div>
+
+
+<!-- MODAL -->
+<div id="approve-modal" tabindex="-1"
+  class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-md max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button type="button"
+        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+        data-modal-hide="approve-modal">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6 text-center">
+        <i class="mx-auto mb-4 text-3xl text-gray-400 fa-solid fa-triangle-exclamation dark:text-gray-200"></i>
+        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to accept this
+          creators offer?</h3>
+        <button data-modal-hide="approve-modal" type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          Yes,I'm sure
+        </button>
+        <button data-modal-hide="approve-modal" type="button"
+          class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
+          cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'Inspiration',
+      loading: false,
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      }
+    }
+  };
+
+      let clip = document.querySelector(".vid");
+      clip.addEventListener("mouseover", function (e) {
+         clip.play();
+      });
+      clip.addEventListener("mouseout", function (e) {
+         clip.pause();
+      });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
