@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head x-data="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title x-data="index()" x-text="title + ' - ' + pageTitle"></title>
+    <meta name="keywords" :content="keywords" />
+    <meta name="twitter:description" :content="description">
+    <meta name="twitter:title" :content="title">
+    <meta
+      x-data="index()"
+      property="og:url"
+      :content="url + pageTitle.split(' ').join('-').toLowerCase() + '.html'" />
+    <meta property="og:site_name" content="7 Express" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" :content="description" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="og:image" content="../assets/img/favicon.png">
+    <meta name="twitter:image" content="../assets/img/favicon.png">
+    <meta name="description" :content="description">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/img/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/674de53dc6.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body class="bg-white dark:bg-gray-900 !m-0 flex items-center justify-center h-screen">
+    <div class="flex flex-col items-center">
+      <i class="mb-3 text-2xl fa-solid fa-spinner fa-spin"></i>
+      <p class="text-gray-700 dark:text-gray-100">Loading... Please wait</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+  </body>
+
+</html>

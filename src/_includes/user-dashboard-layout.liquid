@@ -30,6 +30,11 @@
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900 !m-0" x-data="index()">
+    <style>
+        .custom-transform {
+            transform: translate3d(0px, 148px, 0px) !important;
+        }
+    </style>
     <! --- Navigation --->
     <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
@@ -119,12 +124,62 @@
         </div>
     </nav>
 
-    <! --- Sidebar --->
+    <!--- Sidebar --->
         <aside id="logo-sidebar"
             class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
             aria-label="Sidebar">
-            <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-                <ul class="space-y-2">
+            <div class="h-full px-3 pt-6 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+                
+                <!-- Dropdown Title Should Change Based on Selection -->
+                <button id="navdropdown" data-dropdown-toggle="navdropdownmenu" data-dropdown-placement="bottom-end" class="w-full inline-flex justify-between items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                    Choose Brand
+                    <i class="ml-2 fa-solid fa-chevron-down"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="navdropdownmenu" class="z-10 hidden rounded-lg shadow bg-gray-50 dark:bg-gray-700 custom-transform">
+                    <div class="p-3">
+                    <label for="input-group-search" class="sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="text-gray-500 fa-solid fa-magnifying-glass dark:text-gray-400"></i>
+                        </div>
+                        <input type="text" id="input-group-search" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Brands">
+                    </div>
+                    </div>
+                    <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
+                    <li>
+                        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <div class="flex items-center h-5">
+                            <input id="helper-radio-4" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        </div>
+                        <div class="ml-2 text-sm">
+                            <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
+                                <div>Test Brand 1</div>
+                                <p id="helper-radio-text-4" class="text-xs font-normal text-gray-500 dark:text-gray-300">Some more info can go here like country</p>
+                            </label>
+                        </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <div class="flex items-center h-5">
+                            <input id="helper-radio-5" name="helper-radio" type="radio" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        </div>
+                        <div class="ml-2 text-sm">
+                            <label for="helper-radio-5" class="font-medium text-gray-900 dark:text-gray-300">
+                                <div>Test Brand 2</div>
+                                <p id="helper-radio-text-5" class="text-xs font-normal text-gray-500 dark:text-gray-300">Fashion | United States</p>
+                            </label>
+                        </div>
+                        </div>
+                    </li>
+                    </ul>
+                    <a href="/customer/add-brand" class="flex items-center px-6 py-3 text-sm font-medium text-blue-600 border-t border-gray-200 rounded-b-lg bg-gray-50 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500">
+                    <i class="mr-1 fa-solid fa-plus"></i>
+                    Add Brand
+                </a>
+                </div>
+                <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
                     <li>
                         <a href="/customer/"
                             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">

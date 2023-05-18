@@ -7,90 +7,73 @@ description: "Add Brands Page"
 
 <div class="px-3 py-6 mt-14">
   <div>
-    <div class="grid grid-cols-4 mb-4">
+    <div class="mb-4">
       <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
-      <div class="flex justify-end col-span-3 gap-4">
-        <div class="flex flex-col">
-          <button type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                        Add Brand
-                    </button>
-        </div>
-      </div>
     </div>
-      
-        <div class="">
 
-        </div>
-     
+    <div class=""></div>
+
     <div class="w-[27rem] m-auto">
       <!-- Card --->
       <div class="p-2">
-        <h3 class="font-medium text-2xl dark:text-white">
+        <h3 class="mb-2 text-2xl font-medium dark:text-white">
           Your brand details 📌
         </h3>
-        <p class="dark:text-white">Looks like you haven't introduced yourself yet.</p>
-        <br>
-        <p class="font-normal dark:text-white">Let's get to know you better!</p>
-        <br>
-        <br>
+        <p class="mb-2 dark:text-white">Looks like you haven't introduced yourself yet.<br/>
+          Let's get to know you better!</p>
       </div>
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-         <form action="#" method="POST" class="p-4 space-y-6 rounded-lg w-[25rem]" x-data="index()">
-                        
+        <form
+          action="#"
+          method="POST"
+          class="p-4 space-y-6 rounded-lg"
+          x-data="index()">
+          <div class="mb-6">
+            <label for="brandName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
+            <input
+              type="text"
+              id="brandName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder=""
+              required>
+          </div>
+          <div class="mb-6">
+            <label for="brandCategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Category</label>
+            <select id="brandCategory" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option selected>Choose a Category</option>
+              <option value="Apperal">Apperal</option>
+              <option value="Retail">Retail</option>
+              <option value="Sports">Sports</option>
+              <option value="Home">Home</option>
+            </select>
 
-                        
-                        <div class="mb-6">
-                            <label for="brandName" 
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
-                            <input type="text" id="brandName"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="" required>
-                        </div>
-                        <div class="mb-6">
-                            
-                            
-<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Category</label>
-<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-<option selected>Choose a Category</option>
-<option value="Apperal">Apperal</option>
-<option value="Retail">Retail</option>
-<option value="Sports">Sports</option>
-<option value="Home">Home</option>
-</select>
+          </div>
 
-                        </div>
-                       
-                        <div class="mb-6">
-                            <label for="brandWebsite" 
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Website</label>
-                            <input type="url" id="brandWebsite"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="https://www.brand.com" required>
-                        </div>
-                        <div class="mb-6">
-                            
-                            
-<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Country</label>
-<select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-<option selected>Choose a country</option>
-<option value="US">United States</option>
-<option value="CA">Canada</option>
-<option value="FR">France</option>
-<option value="DE">Germany</option>
-</select>
-
-                        </div>
-                          
-                        <div>
-                            <button type="submit"
-                                class="w-full flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                Sign in
-                            </button>
-                        </div>
-                       
-                    </form>
-          
+          <div class="mb-6">
+            <label for="brandWebsite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Website</label>
+            <input
+              type="url"
+              id="brandWebsite"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="https://www.brand.com"
+              required>
+          </div>
+          <div class="mb-6">
+            <label for="brandCountry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Country</label>
+            <select id="brandCountry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option selected>Choose a country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit" class="w-full flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+              Continue
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
