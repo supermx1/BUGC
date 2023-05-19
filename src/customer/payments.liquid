@@ -4,132 +4,366 @@ title: "Payments"
 description: "Payments Page"
 ---
 
+<div class="px-3 py-6 mt-14">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex flex-col">
+          <a
+            data-modal-target="payments-modal"
+            data-modal-toggle="payments-modal"
+            href="#"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Add Payment
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <!-- Card --->
+      <!--- Tabs with Dashboard Option --->
+        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"> <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+          <ul
+            class="flex flex-wrap -mb-px text-sm font-medium text-center"
+            id="dashboard-tab-list"
+            data-tabs-toggle="#dashboard-tab"
+            role="tablist">
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 rounded-t-lg"
+                id="approve-creators-tab"
+                data-tabs-target="#approve-creators"
+                type="button"
+                role="tab"
+                aria-controls="approve-creators"
+                aria-selected="true">
+                <i class="mr-1 fa-regular fa-thumbs-up"></i>
+                Payment Methods
+              </button>
+            </li>
+
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="ship-products-tab"
+                data-tabs-target="#ship-products"
+                type="button"
+                role="tab"
+                aria-controls="ship-products"
+                aria-selected="false">
+                <i class="mr-1 fa-solid fa-truck-fast"></i>
+                Payment History
+              </button>
+            </li>
 
 
+          </ul>
+        </div>
+        <div id="dashboard-tab">
+          <!--- Paymnet Methods --->
+          <div
+            class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="approve-creators"
+            role="tabpanel"
+            aria-labelledby="approve-creators-tab">
 
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="p-4">
+                      <div class="flex items-center">
+                        <input
+                          id="checkbox-all-search"
+                          type="checkbox"
+                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                      </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Card Numer
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Card Holder
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Expiry
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td class="w-4 p-4">
+                      <div class="flex items-center">
+                        <input
+                          id="checkbox-table-search-1"
+                          type="checkbox"
+                          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                      </div>
+                    </td>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      •••• •••• •••• 6748
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      Clark Kent
+                    </th>
+                    <td class="px-6 py-4">
+                      12/24
+                    </td>
+                    <td class="px-6 py-4">
+                      <a
+                        data-modal-target="approve-modal"
+                        data-modal-toggle="approve-modal"
+                        href="#"
+                        class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--- Payment History --->
+          <div
+            class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="ship-products"
+            role="tabpanel"
+            aria-labelledby="ship-products-tab">
 
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">
+                      Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Description
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Amount
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      27 March 2023
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      Paid fot Task 1
+                    </td>
+                    <td class="px-6 py-4">
+                      <span x-text="currency"></span>7,000
 
+                    </td>
+                    <td class="px-6 py-4">
+                      <a href="#" class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Print PDF</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing
+                  <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                  of
+                  <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                </span>
+                <ul class="inline-flex items-center -space-x-px">
+                  <li>
+                    <a href="#" class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                      <span class="sr-only">Previous</span>
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      aria-current="page"
+                      class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                  </li>
+                  <li>
+                    <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                  </li>
+                  <li>
+                    <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                      <span class="sr-only">Next</span>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
 
+          </div>
 
+        </div>
+      </div>
+    </div>
 
-<div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  </div>
+</div>
+
+<!--- Modal Dialog --->
+<div
+  id="payments-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+        type="button"
+        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+        data-modal-hide="payments-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Payment Method</h1>
         <form
+          action="#"
           action="#"
           method="POST"
           class="p-4 space-y-6 rounded-lg"
           x-data="index()">
-           <div>
-            <!-- Card background -->
-            <div class="relative px-4 sm:px-6 lg:px-8 max-w-lg mx-auto">
-                <img class="rounded-t shadow-lg" src="/assets/img/payment.jpg" width="460" height="180" alt="Pay background" />
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="cardNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Card Number
+              </label>
+              <input
+                x-mask="9999-9999-9999-9999"
+                placeholder="5123-9999-9999-1234"
+                x-model="cardNumber"
+                type="text"
+                id="cardNumber"
+                name="card_number"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                autocorrect="off"
+                spellcheck="false"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-            <!-- Card body -->
-            <div class="relative px-4 sm:px-6 lg:px-8 pb-8 max-w-lg mx-auto" x-data="{ card: true }">
-                <div class="bg-white px-8 pb-6 rounded-b shadow-lg">
 
-                    <!-- Card header -->
-                    <div class="text-center mb-6">
-                        
-                        <h1 class="text-xl leading-snug text-gray-800 font-semibold mb-2">Secure payment Info 🔥</h1>
-                        
-                    </div>
-
-                    
-                    <!-- Card form -->
-                    <div x-show="card">
-                        <div class="space-y-4">
-                            <!-- Card Number -->
-                            
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-nr">Card Number <span class="text-red-500">*</span></label>
-                                <input id="card-nr" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="1234 1234 1234 1234" />
-                            </div>
-                            <!-- Expiry and CVC -->
-                            <div class="flex space-x-4">
-                                <div class="flex-1">
-                                    <label class="block text-sm font-medium mb-1" for="card-expiry">Expiry Date <span class="text-red-500">*</span></label>
-                                    <input id="card-expiry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="MM/YY" />
-                                </div>
-                                <div class="flex-1">
-                                    <label class="block text-sm font-medium mb-1" for="card-cvc">CVC <span class="text-red-500">*</span></label>
-                                    <input id="card-cvc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="CVC" />
-                                </div>
-                            </div>
-                            <!-- Name on Card -->
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-name"> Name of The Card <span class="text-red-500">*</span></label>
-                                <input id="card-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="VISA" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-name">Cash Holder Name <span class="text-red-500">*</span></label>
-                                <input id="card-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" placeholder="John Doe" />
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-email">Company Name <span class="text-red-500">*</span></label>
-                                <input id="Company-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="email" placeholder="www.google.com" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-email">Billing Country <span class="text-red-500">*</span></label>
-                                <select id="brandCountry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose a country</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-                                 </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-email">Region <span class="text-red-500">*</span></label>
-                                <input id="Company-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="email" placeholder="region" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-email">City <span class="text-red-500">*</span></label>
-                                <input id="Company-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="email" placeholder="city" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-1" for="card-email">Billing Address <span class="text-red-500">*</span></label>
-                                <input id="Company-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="email" placeholder="Address" />
-                            </div>
-                        </div>
-                        <!-- Form footer -->
-                        <div class="mt-6">
-                            <div class="mb-4">
-                                <button class="font-medium text-sm inline-flex items-center justify-center px-3 py-2 border border-transparent rounded-lg leading-5 shadow-sm transition duration-150 ease-in-out w-full bg-indigo-500 hover:bg-indigo-600 text-white focus:outline-none focus-visible:ring-2">Pay Now</button>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                  
-
-                </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="expiryDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Expiry Date
+              </label>
+              <input
+                x-mask="99/99"
+                placeholder="MM/YY"
+                x-model="cardExpiry"
+                type="text"
+                id="expiryDate"
+                name="expiry_date"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-        </div>
-          
 
-          
-          
-          
+            <div class="col-span-6 sm:col-span-3">
+              <label for="cvv-cvv2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                CVC/CVV2
+              </label>
+
+              <input
+                x-mask="999"
+                placeholder="123"
+                x-model="cardCvc"
+                type="number"
+                id="cvv-cvv2"
+                name="cvv_cvv2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <label for="cardHolderName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Card Holder Name
+              </label>
+              <input
+                x-model="cardHolder"
+                type="text"
+                id="cardHolderName"
+                name="card_holder_name"
+                autocorrect="off"
+                spellcheck="false"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+              <label for="billingCountry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Billing Country
+              </label>
+              <select id="billingCountry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="FR">France</option>
+                <option value="DE">Germany</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Postal/Zip Code
+              </label>
+
+              <input
+                type="text"
+                id="postalCode"
+                name="postal_code"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Address
+              </label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                autocorrect="off"
+                spellcheck="false"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button :disabled="cardNumber.length < 1 || cardExpiry.length < 1 || cardCvc.length < 1" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Payment Method
+              </button>
+            </div>
+          </div>
+
         </form>
       </div>
-<!-- More components -->
-<div x-show="open" class="fixed bottom-0 right-0 w-full md:bottom-8 md:right-12 md:w-auto z-60" x-data="{ open: true }">
-    <div class="bg-gray-800 text-gray-50 text-sm p-3 md:rounded-lg shadow-lg flex justify-between">
-        <div>👉 <a class="hover:underline ml-1" href="https://cruip.com/mosaic/?ref=codepen-cruip-customers-table" target="_blank">More components on Cruip.com</a></div>
-        <button class="text-gray-500 hover:text-gray-400 ml-5" @click="open = false">
-            <span class="sr-only">Close</span>
-            <svg class="w-4 h-4 flex-shrink-0 fill-current" viewBox="0 0 16 16">
-                <path d="M12.72 3.293a1 1 0 00-1.415 0L8.012 6.586 4.72 3.293a1 1 0 00-1.414 1.414L6.598 8l-3.293 3.293a1 1 0 101.414 1.414l3.293-3.293 3.293 3.293a1 1 0 001.414-1.414L9.426 8l3.293-3.293a1 1 0 000-1.414z" />
-            </svg>
-        </button>
     </div>
+  </div>
 </div>
+
 
 <script>
   function index() {
     return {
       pageTitle: 'Payments',
+      cardNumber: '',
+      cardExpiry: '',
+      cardCvc: '',
+      cardHolder: '',
       user: {
         id: 1,
         firstname: 'Robert',
