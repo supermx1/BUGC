@@ -134,7 +134,6 @@ description: "Payments Page"
             id="ship-products"
             role="tabpanel"
             aria-labelledby="ship-products-tab">
-
             <!--- Table Start --->
             <div class="relative overflow-x-auto">
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -241,7 +240,6 @@ description: "Payments Page"
         <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Payment Method</h1>
         <form
           action="#"
-          action="#"
           method="POST"
           class="p-4 space-y-6 rounded-lg"
           x-data="index()">
@@ -259,11 +257,9 @@ description: "Payments Page"
                 name="card_number"
                 inputmode="numeric"
                 autocomplete="cc-number"
-                autocorrect="off"
                 spellcheck="false"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-
             <div class="col-span-6 sm:col-span-3">
               <label for="expiryDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Expiry Date
@@ -277,12 +273,10 @@ description: "Payments Page"
                 name="expiry_date"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-
             <div class="col-span-6 sm:col-span-3">
               <label for="cvv-cvv2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 CVC/CVV2
               </label>
-
               <input
                 x-mask="999"
                 placeholder="123"
@@ -292,7 +286,6 @@ description: "Payments Page"
                 name="cvv_cvv2"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-
             <div class="col-span-6 sm:col-span-6">
               <label for="cardHolderName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Card Holder Name
@@ -302,11 +295,9 @@ description: "Payments Page"
                 type="text"
                 id="cardHolderName"
                 name="card_holder_name"
-                autocorrect="off"
                 spellcheck="false"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-
             <div class="col-span-6 sm:col-span-3">
               <label for="billingCountry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Billing Country
@@ -323,7 +314,6 @@ description: "Payments Page"
               <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Postal/Zip Code
               </label>
-
               <input
                 type="text"
                 id="postalCode"
@@ -338,7 +328,6 @@ description: "Payments Page"
                 type="text"
                 id="address"
                 name="address"
-                autocorrect="off"
                 spellcheck="false"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
@@ -348,14 +337,11 @@ description: "Payments Page"
               </button>
             </div>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 </div>
-
-
 <script>
   function index() {
     return {
