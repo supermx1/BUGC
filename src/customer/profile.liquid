@@ -15,62 +15,196 @@ description: "Profile Page"
         </div>
       </div>
     </div>
-    <div class="w-[27rem] m-auto">
-      <!-- Card --->
-      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <form
-                action="#"
-                method="POST"
-                class="p-4 space-y-6 rounded-lg"
-                x-data="index()">
-          <div class="mb-6">
-            <label for="brandName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
-            <input
-                    type="text"
-                    id="brandName"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder=""
-                    required>
-          </div>
-          <div class="mb-6">
-            <label for="brandCategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Category</label>
-            <select id="brandCategory" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose a Category</option>
-              <option value="Apperal">Apperal</option>
-              <option value="Retail">Retail</option>
-              <option value="Sports">Sports</option>
-              <option value="Home">Home</option>
-            </select>
+    <div class="grid grid-cols-1 md:grid-cols-5 md:gap-4">
+      <div class="col-span-3 mb-4 md:mb-0">
+        <!-- Card --->
+        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <form
+                  action="#"
+                  method="POST"
+                  class="space-y-6 rounded-lg"
+                  x-data="index()">
 
-          </div>
+            <div class="grid grid-cols-6 gap-6 mt-2">
+              <div class="col-span-6 sm:col-span-6">
+                <div class="mb-3 relative">
+                  <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                  </div>
+                  <div class="relative flex justify-start">
+                    <span class="text-xl font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Basic Information</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  First Name
+                </label>
+                <input
+                        placeholder="Your First Name"
+                        x-model="profile.firstName"
+                        type="text"
+                        id="firstName"
+                        name="first_name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Last Name
+                </label>
+                <input
+                        placeholder="Your Last Name"
+                        x-model="profile.lastName"
+                        type="text"
+                        id="lastName"
+                        name="last_name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Date of Birth
+                </label>
+                <input
+                        placeholder=""
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Gender
+                </label>
+                <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Choose a Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
 
-          <div class="mb-6">
-            <label for="brandWebsite" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Website</label>
-            <input
-                    type="url"
-                    id="brandWebsite"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="https://www.brand.com"
-                    required>
+              <div class="col-span-6 sm:col-span-6">
+                <div class="mb-3 relative">
+                  <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                  </div>
+                  <div class="relative flex justify-start">
+                    <span class="text-xl font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Contact Information</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Email
+                </label>
+                <input
+                        placeholder="Your Email"
+                        x-model="profile.email"
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Phone Number
+                </label>
+                <input
+                        placeholder="Your Phone Number"
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-6">
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Address
+                </label>
+                <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        spellcheck="false"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  City
+                </label>
+                <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  State
+                </label>
+                <select id="state" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Choose a State</option>
+                  <option value="State 1">State 1</option>
+                </select>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Country
+                </label>
+                <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Choose a Country</option>
+                  <option value="Country 1">Country 1</option>
+                </select>
+              </div>
+              <div class="col-span-6 sm:col-span-3">
+                <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  Postal Code
+                </label>
+                <input
+                        type="text"
+                        id="postalCode"
+                        name="postal_code"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+              </div>
+
+
+              <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+                <button :disabled="profile.firstName.length < 2 || profile.lastName.length < 2" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                  Save Profile
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-span-2 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="mb-3 relative">
+          <div aria-hidden="true" class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
           </div>
-          <div class="mb-6">
-            <label for="brandCountry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Country</label>
-            <select id="brandCountry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option selected>Choose a country</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-            </select>
+          <div class="relative flex justify-start">
+            <span class="text-xl font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Profile Image</span>
           </div>
-          <div>
-            <button type="submit" class="w-full flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-              Continue
+        </div>
+        <form>
+          <div class="flex items-center justify-center w-full">
+            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">PNG or JPG</p>
+              </div>
+              <input id="dropzone-file" type="file" class="hidden" />
+            </label>
+          </div>
+          <div class="mt-6 col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button class="w-full flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+              Upload Image
             </button>
           </div>
         </form>
+
       </div>
     </div>
+
   </div>
 </div>
 
@@ -78,6 +212,11 @@ description: "Profile Page"
   function index() {
     return {
       pageTitle: 'Profile',
+      profile: {
+        firstName: '',
+        lastName: '',
+        email: '',
+      },
       user: {
         id: 1,
         firstname: 'Robert',
