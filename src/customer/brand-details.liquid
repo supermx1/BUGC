@@ -209,6 +209,13 @@ description: "Brands Page"
             aria-labelledby="products-tab">
 
             <div class="relative overflow-x-auto">
+              <div class="flex justify-end col-span-3 gap-4">
+            <div class="flex flex-col">
+             <a data-modal-target="add-products-modal" data-modal-toggle="add-products-modal" href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Add Product 
+             </a>
+        </div>
+      </div>
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -425,7 +432,96 @@ description: "Brands Page"
 </div>
 
 
+<div
+  id="add-products-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+        type="button"
+        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+        data-modal-hide="add-products-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Product Details</h1>
+        <form
+          action="#"
+          method="POST"
+          class="p-4 space-y-6 rounded-lg"
+          x-data="index()">
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for=" productName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Product Name
+              </label>
+              <input
+               x-model="productName"
+                placeholder="Sports Shoe"
+                x-model="productName"
+                type="text"
+                id="productName"
+                name="product_name"
+                
+                
+                
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-6 ">
+              <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Description
+              </label>
+              <input
+              
+                placeholder="Add Description"
+               
+                type="text"
+                id="description"
+                name="description"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="productHomepage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                 Product Homepage
+              </label>
+              <input
+              x-model="productHomepage"
+                placeholder="https://google.com"
+                
+                type="url"
+                id="productHomepage"
+                name="product_homepage"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="retailPrice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Retail Price
+              </label>
+              <input
+                x-model="retailPrice"
+                type="number"
+                id="retailPrice"
+                name="retail_price"
+                spellcheck="false"
+                step="0.01"
 
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button :disabled="retailPrice.length < 1 || productHomepage.length < 1 || productName.length < 1" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Product
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -433,6 +529,9 @@ description: "Brands Page"
   function index() {
     return {
       pageTitle: 'Test Brand',
+      retailPrice: "",
+      productName:"",
+      productHomepage:"",
       user: {
         id: 1,
         firstname: 'Robert',
