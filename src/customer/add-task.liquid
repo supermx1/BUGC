@@ -1,0 +1,342 @@
+---
+layout: user-dashboard-layout
+title: "Add Task"
+description: "Add Task Page"
+---
+<div class="px-3 py-6 mt-14">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex flex-col">
+          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            Save Draft
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full m-auto">
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <form
+                action="#"
+                method="POST"
+                class="space-y-6 rounded-lg"
+                x-data="index()">
+
+          <div class="grid grid-cols-6 gap-6 mt-2">
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Your Product(s)</span>
+                </div>
+              </div>
+              <a href="/customer/brand-details" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Product
+              </a>
+              <ul class="grid w-full gap-6 md:grid-cols-3">
+                <li>
+                  <input type="checkbox" id="product1" value="" class="hidden peer">
+                  <label for="product1" class="inline-flex items-center justify-between w-full text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <div class="flex">
+                      <div class="w-[20%]">
+                        <img class="aspect-[4/3] h-full w-20 rounded-tl-lg rounded-bl-lg" src="https://static.billo.app/product-images/1683824008251-a23487cfcd8238eae9a5-DSC05366-Edit-Edit-Edit_grande.jpg" alt="product name"/>
+                      </div>
+                      <div class="w-[80%] p-4">
+                        <div class="w-full text-lg font-semibold">Product 1</div>
+                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                      </div>
+
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <input type="checkbox" id="product2" value="" class="hidden peer">
+                  <label for="product2" class="inline-flex items-center justify-between w-full text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <div class="flex">
+                      <div class="w-[20%]">
+                        <img class="aspect-[4/3] h-full w-20 rounded-tl-lg rounded-bl-lg" src="https://static.billo.app/product-images/1683823188429-6960064e12761d766dc2-0L1A8439_4_grande.jpg" alt="product name"/>
+                      </div>
+                      <div class="w-[80%] p-4">
+                        <div class="w-full text-lg font-semibold">Product 2</div>
+                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                      </div>
+
+                    </div>
+                  </label>
+                </li>
+                <li>
+                  <input type="checkbox" id="product3" value="" class="hidden peer">
+                  <label for="product3" class="inline-flex items-center justify-between w-full text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <div class="flex">
+                      <div class="w-[20%]">
+                        <img class="aspect-[4/3] h-full w-20 rounded-tl-lg rounded-bl-lg" src="https://static.billo.app/product-images/1683823865081-182f6e2bfdd4cb542e91-dripsweat3_grande.jpg" alt="product name"/>
+                      </div>
+                      <div class="w-[80%] p-4">
+                        <div class="w-full text-lg font-semibold">Product 3</div>
+                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                      </div>
+
+                    </div>
+                  </label>
+                </li>
+              </ul>
+
+
+
+            </div>
+
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Video Type</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Number of Videos/Creators</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Video Duration</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Choose Aspect Ratio</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Authentic Photos</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creator Criteria</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <div x-show="task.age === '18-24'" id="ageAlert" role="alert" class="w-full flex p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" x-cloak>
+                <i class="fa-solid fa-circle-exclamation mr-3 mt-1"></i>
+                <span class="sr-only">Info</span>
+                <div>
+                  <span class="font-medium">Note!</span> We are currently seeing high demand for the creators of your selected age range. Please consider other age ranges or choose "Any" for more creators.
+                </div>
+                <button type="button" class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-yellow-50 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700" data-dismiss-target="#ageAlert" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+                </button>
+              </div>
+              <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Age</h3>
+              <div class="flex">
+                <div class="flex items-center mr-4">
+                  <input id="any" type="radio" x-model="task.age"  value="Any" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="any" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Any</label>
+                </div>
+                <div class="flex items-center mr-4">
+                  <input id="18-24" type="radio" x-model="task.age" value="18-24" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="18-24" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">18-24</label>
+                </div>
+                <div class="flex items-center mr-4">
+                  <input checked id="25-34" type="radio" x-model="task.age"  value="25-34" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="25-34" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">25-34</label>
+                </div>
+                <!-- Can be disabled if no creators with this age range -->
+                <div class="flex items-center">
+                  <input disabled id="45+" type="radio" x-model="task.age"  value="45+" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="45+" class="ml-2 text-sm font-medium text-gray-400 dark:text-gray-500">45+</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Gender
+              </label>
+              <select id="gender" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="Any">Any</option>
+                <option value="Male">Male</option>
+                <option value="Female">Male</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="creatorPreference" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Creator Preference
+              </label>
+              <input
+                      type="text"
+                      id="creatorPreference"
+                      name="creator_preference"
+                      placeholder="E.g. Can shoot in car, should have a pet"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-span-6 sm:col-span-3">
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Email
+              </label>
+              <input
+                      placeholder="Your Email"
+
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Phone Number
+              </label>
+              <input
+                      placeholder="Your Phone Number"
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Address
+              </label>
+              <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      spellcheck="false"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                City
+              </label>
+              <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                State
+              </label>
+              <select id="state" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a State</option>
+                <option value="State 1">State 1</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Country
+              </label>
+              <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a Country</option>
+                <option value="Country 1">Country 1</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Postal Code
+              </label>
+              <input
+                      type="text"
+                      id="postalCode"
+                      name="postal_code"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Save Profile
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--- If no brands are created --->
+<div class="p-5 mb-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+  <p class="text-center text-gray-400 dark:text-gray-300">To create a task you must first create a brand. Get started by clicking the button below to create.</p>
+  <a href="/customer/brands"
+          class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+    Add Brand
+  </a>
+</div>
+
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'Add Task',
+
+      task: {
+        age:''
+      },
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      }
+    }
+  }
+</script>
