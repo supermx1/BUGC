@@ -3,19 +3,44 @@ layout: user-dashboard-layout
 title: "Add Task"
 description: "Add Task Page"
 ---
-<div class="px-3 py-6 mt-14">
+<div class="px-3 py-6 mt-14" x-data="head">
   <div>
     <div class="grid grid-cols-4 mb-4">
       <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
       <div class="flex justify-end col-span-3 gap-4">
         <div class="flex flex-col">
           <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            Save Draft
+            Save as Draft
           </button>
         </div>
       </div>
     </div>
     <div class="w-full m-auto">
+
+      <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
+        <li class="flex items-center text-blue-600 dark:text-blue-500">
+        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
+            1
+        </span>
+          Video Details
+          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+        </li>
+        <li class="flex items-center">
+        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+            2
+        </span>
+          Video Brief Review
+          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+        </li>
+        <li class="flex items-center">
+        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+            3
+        </span>
+          Payment
+        </li>
+      </ol>
+
+
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <form
                 action="#"
@@ -25,10 +50,12 @@ description: "Add Task Page"
 
           <div class="grid grid-cols-6 gap-6 mt-2">
             <div class="col-span-6 sm:col-span-6">
+              <!-- Products -->
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
+                <!-- Products Title -->
                 <div class="relative flex justify-start">
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Your Product(s)</span>
                 </div>
@@ -36,6 +63,7 @@ description: "Add Task Page"
               <a href="/customer/brand-details" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
                 + Add Product
               </a>
+              <!-- Products Cards-->
               <ul class="grid w-full gap-6 md:grid-cols-3">
                 <li>
                   <input type="checkbox" id="product1" value="" class="hidden peer">
@@ -46,7 +74,7 @@ description: "Add Task Page"
                       </div>
                       <div class="w-[80%] p-4">
                         <div class="w-full text-lg font-semibold">Product 1</div>
-                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                        <div class="w-full text-xs line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
                       </div>
 
                     </div>
@@ -61,7 +89,7 @@ description: "Add Task Page"
                       </div>
                       <div class="w-[80%] p-4">
                         <div class="w-full text-lg font-semibold">Product 2</div>
-                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                        <div class="w-full text-xs line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
                       </div>
 
                     </div>
@@ -76,59 +104,493 @@ description: "Add Task Page"
                       </div>
                       <div class="w-[80%] p-4">
                         <div class="w-full text-lg font-semibold">Product 3</div>
-                        <div class="w-full text-sm line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
+                        <div class="w-full text-xs line-clamp-2">Some details on the product. Some details on the product. Some details on the product. Some details on the product</div>
                       </div>
 
                     </div>
                   </label>
                 </li>
               </ul>
-
-
-
             </div>
-
-
+            <!-- Video Type -->
             <div class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
+                <!-- Video Title -->
                 <div class="relative flex justify-start">
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Video Type</span>
                 </div>
               </div>
-            </div>
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
+                <div>
+                  <input type="radio" name="video_type" value="1" x-model="task.videoType" id="videoAD"
+                         class="peer hidden [&:checked_+_label_svg]:block" checked />
+                  <label for="videoAD"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50">Video Ad</p>
 
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>23,000</h1>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_type" value="2" x-model="task.videoType" id="tiktokShortReel"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="tiktokShortReel"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50">TikTok/Short/Reel</p>
+
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>5,000</h1>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_type" x-model="task.videoType" value="3" id="honestReview"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="honestReview"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50">Honest Review</p>
+
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>51,000</h1>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_type" x-model="task.videoType" value="4" id="productShowcase"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="productShowcase"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50">Product Showcase</p>
+
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>5,000</h1>
+                  </label>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[3rem]">
+                <div class="flex flex-col">
+                  <h1 x-cloak x-show="task.videoType === '1'" class="font-semibold text-lg dark:text-gray-50 mb-3">What is a video ad?</h1>
+                  <h1 x-cloak x-show="task.videoType === '2'" class="font-semibold text-lg dark:text-gray-50 mb-3">What is a TikTok / Short / Reel?</h1>
+                  <h1 x-cloak x-show="task.videoType === '4'" class="font-semibold text-lg dark:text-gray-50 mb-3">What is a product showcase?</h1>
+                  <h1 x-cloak x-show="task.videoType === '3'" class="font-semibold text-lg dark:text-gray-50 mb-3">What is an honest review?</h1>
+
+                  <p x-cloak x-show="task.videoType === '1'" class="dark:text-gray-50 mb-3 text-sm">A flexible video format perfect for various advertising needs such as testimonials, unboxings, how-to's, and more.</p>
+                  <p x-cloak x-show="task.videoType === '4'" class="dark:text-gray-50 mb-3 text-sm">Use for your product page, Amazon / Shopify listing.</p>
+                  <p x-cloak x-show="task.videoType === '3'" class="dark:text-gray-50 mb-3 text-sm">Creators share authentic experiences with your product, mentioning benefits and not more than one area for improvement, without any briefing or instructions.</p>
+                  <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-100 text-sm">
+                    <li x-cloak x-show="task.videoType === '2'" class="flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+                      Top rated creators with exceptional social media skills
+                    </li>
+                    <li x-cloak x-show="task.videoType === '2'" class="flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+                      Social media specific graphics and music
+                    </li>
+                    <li x-cloak x-show="task.videoType === '3'" class="flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+                      Top rated creators with exceptional skills
+                    </li>
+                    <li x-cloak x-show="task.videoType === '2'" class="flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+                      Aesthetic product displays from every angle
+                    </li>
+                    <li x-cloak x-show="task.videoType === '1' || task.videoType === '2' || task.videoType === '3'" class="flex items-center">
+                      <i class="fa-solid fa-circle-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
+                      2 free post-delivery revisions
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <iframe x-cloak x-show="task.videoType === '1'" width="100%" height="315" src="https://www.youtube.com/embed/TX-uKDsHUVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe x-cloak x-show="task.videoType === '2'" width="100%" height="315" src="https://www.youtube.com/embed/unCx2d6Tlw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe x-cloak x-show="task.videoType === '3'" width="100%" height="315" src="https://www.youtube.com/embed/TZGBsRyXXTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe x-cloak x-show="task.videoType === '4'" width="100%" height="315" src="https://www.youtube.com/embed/unCx2d6Tlw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- Number of Videos -->
             <div class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
                 <div class="relative flex justify-start">
-                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Number of Videos/Creators</span>
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Number of Videos</span>
                 </div>
               </div>
+              <div id="ageAlert" role="alert" class="w-full flex p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" x-cloak>
+                <i class="fa-solid fa-circle-exclamation mr-3 mt-1"></i>
+                <span class="sr-only">Info</span>
+                <div>
+                  <span class="font-medium">Note!</span> You will need to provide your product to the creator as a giveaway.
+                </div>
+                <button type="button" class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-yellow-50 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700" data-dismiss-target="#ageAlert" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+                </button>
+              </div>
+              <div class="flex">
+                <button x-on:click="task.noOfVideos--" type="button" class="mr-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                  <i class="fa-solid w-5 h-5 relative top-1 fa-minus"></i>
+                </button>
+                <label for="noOfVideos"></label>
+                <input id="noOfVideos" x-model="task.noOfVideos" type="text" inputmode="numeric" class="w-12 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1">
+                <button x-on:click="task.noOfVideos++" type="button" class="ml-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                  <i class="fa-solid w-5 h-5 relative top-1 fa-plus"></i>
+                </button>
+              </div>
             </div>
-
+            <!-- Number of Videos Revision -->
             <div class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Number of Videos Revisions</span>
+                </div>
+              </div>
+              <div id="ageAlert" role="alert" class="w-full flex p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" x-cloak>
+                <i class="fa-solid fa-circle-exclamation mr-3 mt-1"></i>
+                <span class="sr-only">Info</span>
+                <div>
+                  <span class="font-medium">Note!</span> Maximum number of correction disclaimer goes here.
+                </div>
+                <button type="button" class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-yellow-50 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700" data-dismiss-target="#ageAlert" aria-label="Close">
+                  <span class="sr-only">Close</span>
+                  <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+                </button>
+              </div>
+              <div class="flex">
+                <button x-on:click="task.noOfVideosRevisions--" type="button" class="mr-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                  <i class="fa-solid w-5 h-5 relative top-1 fa-minus"></i>
+                </button>
+                <label for="noOfVideos"></label>
+                <input id="noOfVideos" x-model="task.noOfVideosRevisions" type="text" inputmode="numeric" class="w-12 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1">
+                <button x-on:click="task.noOfVideosRevisions++" type="button" class="ml-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                  <i class="fa-solid w-5 h-5 relative top-1 fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Video Duration -->
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Video Duration Title -->
                 <div class="relative flex justify-start">
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Video Duration</span>
                 </div>
               </div>
-            </div>
+              <!-- Video Duration Cards -->
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
+                <div x-show="task.videoType !== '4'">
+                  <input type="radio" name="video_duration" value="1" x-model="task.videoDuration" id="15sec"
+                         class="peer hidden [&:checked_+_label_svg]:block" :checked="task.videoType !== '4'" />
+                  <label for="15sec"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-start mr-2"></i>15 Sec.</p>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50">Included</h1>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_duration" value="2" x-model="task.videoDuration" id="30sec"
+                         class="peer hidden [&:checked_+_label_svg]:block"  :checked="task.videoType === '4'"/>
+                  <label for="30sec"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-half mr-2"></i>30 Sec.</p>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="task.videoType === '1' ? '+' + currency + '15,000': task.videoType === '2' ? '+' + currency + '10,000' : task.videoType === '3' ? '+' + currency + '5,000' : task.videoType === '4' ? 'Included' : ''"></span><span x-show="task.videoType !== '4'" class="text-xs font-normal">/Each Video</span></h1>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_duration" x-model="task.videoDuration" value="3" id="60sec"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="60sec"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-end mr-2"></i>60 Sec.</p>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50">+<span x-text="currency"></span>10,000<span class="text-xs font-normal">/Each Video</span></h1>
+                  </label>
+                </div>
 
-            <div class="col-span-6 sm:col-span-6">
+              </div>
+            </div>
+            <!-- Video Aspect Ratio  -->
+            <div x-cloak x-show="task.videoType === '1' || task.videoType === '3' || task.videoType === '4'" class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
+                <!-- Video Aspect Ratio Title-->
                 <div class="relative flex justify-start">
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Choose Aspect Ratio</span>
+                </div>
+              </div>
+              <!-- Video Aspect Ratio Cards -->
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
+                <div>
+                  <input type="radio" name="video_aspect_ratio" value="1" x-model="task.videAspectRatio" id="fullPortrait"
+                         class="peer hidden [&:checked_+_label_svg]:block" checked />
+                  <label for="fullPortrait"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <div class="flex">
+                        <div class="w-[45px]">
+                          <div class="w-[25px] h-[45px] border border-black dark:border-gray-50 rounded flex justify-center items-center">
+                            <i class="fa-solid fa-play"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 dark:text-gray-50 font-bold mb-1">Full Portrait</p>
+                          <p class="text-gray-500 dark:text-gray-50">9:16</p>
+                        </div>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Stories, Reels or Shorts for social media marketing.</p>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_aspect_ratio" value="2" x-model="task.videAspectRatio" id="landscape"
+                         class="peer hidden [&:checked_+_label_svg]:block" />
+                  <label for="landscape"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <div class="flex">
+                        <div class="w-[45px]">
+                          <div class="w-[45px] h-[25px] border border-black dark:border-gray-50 rounded flex justify-center items-center">
+                            <i class="fa-solid fa-play"></i>
+                          </div>
+                        </div>
+                        <div class="ml-2">
+                          <p class="text-gray-700 dark:text-gray-50 font-bold mb-1">Landscape</p>
+                          <p class="text-gray-500 dark:text-gray-50">16:9</p>
+                        </div>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Display ads in Amazon, Youtube, Twitter.</p>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_aspect_ratio" value="3" x-model="task.videAspectRatio" id="vertical"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="vertical"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <div class="flex">
+                        <div class="w-[45px]">
+                          <div class="w-[25px] h-[35px] border border-black dark:border-gray-50 rounded flex justify-center items-center">
+                            <i class="fa-solid fa-play"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 dark:text-gray-50 font-bold mb-1">Vertical</p>
+                          <p class="text-gray-500 dark:text-gray-50">4:5</p>
+                        </div>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Feed placement ads for social media marketing.</p>
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" name="video_aspect_ratio" value="4" x-model="task.videAspectRatio" id="square"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="square"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex items-center justify-between">
+                      <div class="flex">
+                        <div class="w-[45px]">
+                          <div class="w-[32px] h-[32px] border border-black dark:border-gray-50 rounded flex justify-center items-center">
+                            <i class="fa-solid fa-play"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 dark:text-gray-50 font-bold mb-1">Square</p>
+                          <p class="text-gray-500 dark:text-gray-50">1:1</p>
+                        </div>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Carousel and Instagram Shop ads.</p>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+            <!-- In-House Services  -->
+            <div x-cloak x-show="task.videoType === '1' || task.videoType === '3' || task.videoType === '4'" class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- In-House Services Title-->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">In-house Services</span>
+                </div>
+              </div>
+              <!-- In-House Services Cards -->
+              <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-[3rem]">
+                <div class="col-span-1 flex flex-col">
+                  <input type="radio" name="in_house_service" value="1"  id="inHouseSimple"
+                         class="peer hidden [&:checked_+_label_svg]:block" checked />
+                  <label for="inHouseSimple"
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <video src="https://static.billo.app/public/v7-campaign-examples/Video AD_16x9_subs.mp4"
+                           poster="https://static.billo.app/public/v-7-1-campaign-examples/addons_thumb_001.jpg"
+                           class="w-full aspect-[4/3] rounded-lg object-cover" controls>
+                    </video>
+                    <p class="text-gray-700 dark:text-gray-50 font-bold my-3">Simple editing bundle</p>
+                    <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-100 text-sm">
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Subtitles
+                      </li>
+                    </ul>
+                    <h3 class="dark:text-gray-50 text-xl mt-3 "><span x-text="currency"></span>8,000<span class="text-xs">/Each Video</span></h3>
+
+
+                  </label>
+                </div>
+                <div class="col-span-1 flex flex-col">
+                  <input type="radio" name="in_house_service" value="2" id="inHouseStarter"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="inHouseStarter"
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <video src="https://static.billo.app/user-content/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.mov"
+                           poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
+                           class="w-full aspect-[4/3] rounded-lg object-cover" controls>
+                    </video>
+                    <p class="text-gray-700 dark:text-gray-50 font-bold my-3">Starter editing bundle
+                      <span data-tooltip-target="date-tooltip1" class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
+                        Popular
+                      </span>
+                    </p>
+                    <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-100 text-sm">
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Animated subtitles
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Logo
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Call-to-action
+                      </li>
+                    </ul>
+                    <h3 class="dark:text-gray-50 text-xl mt-3"><span x-text="currency"></span>13,000<span class="text-xs">/Each Video</span></h3>
+
+                  </label>
+                </div>
+                <div class="col-span-1 flex flex-col">
+                  <input type="radio" name="in_house_service" value="3" id="inHousePremium"
+                         class="peer hidden [&:checked_+_label_svg]:block"  />
+                  <label for="inHousePremium"
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <video src="https://static.billo.app/user-content/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.mov"
+                           poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
+                           class="w-full aspect-[4/3] rounded-lg object-cover" controls>
+                    </video>
+                    <p class="text-gray-700 dark:text-gray-50 font-bold my-3">Premium editing bundle</p>
+                    <ul class="max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-100 text-sm">
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Animated subtitles
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Logo
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Motion graphics
+                      </li>
+                      <li class="flex items-center">
+                        <i class="fa-solid fa-check mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0 text-xs"></i>
+                        Music
+                      </li>
+                    </ul>
+                    <h3 class="dark:text-gray-50 text-xl mt-3"><span x-text="currency"></span>18,000<span class="text-xs">/Each Video</span></h3>
+
+                  </label>
                 </div>
               </div>
             </div>
@@ -142,6 +604,23 @@ description: "Add Task Page"
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Authentic Photos</span>
                 </div>
               </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-[3rem]">
+                <div>
+                  <img src="https://static.billo.app/public/content-examples/photos_bundle_web.png" class="w-[80%]" alt="image-1">
+                </div>
+                <div class="flex flex-col justify-center p-4">
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3">Get 4 Authentic Photos</h2>
+                  <p class="dark:text-gray-50 mb-5">Each creator that you will work with will produce authentic photos for thumbnails of your posts in your social media channels or your website.</p>
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>45,000<span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
+                  <div>
+                    <button type="button" x-on:click="task.authPhotos = !task.authPhotos" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                      <span x-html="task.authPhotos ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <div class="col-span-6 sm:col-span-6">
@@ -153,155 +632,113 @@ description: "Add Task Page"
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creator Criteria</span>
                 </div>
               </div>
-            </div>
-            <div class="col-span-6 sm:col-span-6">
-              <div x-show="task.age === '18-24'" id="ageAlert" role="alert" class="w-full flex p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" x-cloak>
-                <i class="fa-solid fa-circle-exclamation mr-3 mt-1"></i>
-                <span class="sr-only">Info</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-[3rem]">
                 <div>
-                  <span class="font-medium">Note!</span> We are currently seeing high demand for the creators of your selected age range. Please consider other age ranges or choose "Any" for more creators.
+                  <input type="radio" name="creator_type" value="1"  id="regularCreator"
+                         class="peer hidden [&:checked_+_label_svg]:block" checked />
+                  <label for="regularCreator"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex  justify-between">
+                      <div>
+                        <p class="text-gray-700 dark:text-gray-50 font-bold mb-2">Regular Creators</p>
+                        <p class="text-gray-500 dark:text-gray-100">Beginner creators eager to start their career, usually filming on their smartphone</p>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50">Included</h1>
+                  </label>
                 </div>
-                <button type="button" class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-yellow-50 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700" data-dismiss-target="#ageAlert" aria-label="Close">
-                  <span class="sr-only">Close</span>
-                  <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
-                </button>
+                <div>
+                  <input type="radio" name="creator_type" value="2"  id="premiumCreator"
+                         class="peer hidden [&:checked_+_label_svg]:block" />
+                  <label for="premiumCreator"
+                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                    <div class="flex  justify-between">
+                      <div>
+                        <p class="text-gray-700 dark:text-gray-50 font-bold mb-2">Premium Creators</p>
+                        <p class="text-gray-500 dark:text-gray-100">Handpicked selection of top-rated skilled creators with superior experience</p>
+                      </div>
+                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>56,000<span class="text-xs font-normal">/Video</span></h1>
+                  </label>
+                </div>
+
               </div>
-              <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Age</h3>
-              <div class="flex">
-                <div class="flex items-center mr-4">
-                  <input id="any" type="radio" x-model="task.age"  value="Any" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                  <label for="any" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Any</label>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="col-span-2 sm:col-span-2">
+                  <div x-show="task.age === '18-24'" id="ageAlert" role="alert" class="w-full flex p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" x-cloak>
+                    <i class="fa-solid fa-circle-exclamation mr-3 mt-1"></i>
+                    <span class="sr-only">Info</span>
+                    <div>
+                      <span class="font-medium">Note!</span> We are currently seeing high demand for the creators of your selected age range. Please consider other age ranges or choose "Any" for more creators.
+                    </div>
+                    <button type="button" class="justify-center items-center ml-auto -mx-1.5 -my-1.5 bg-yellow-50 text-yellow-500 rounded-lg focus:ring-2 focus:ring-yellow-400 p-1.5 hover:bg-yellow-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700" data-dismiss-target="#ageAlert" aria-label="Close">
+                      <span class="sr-only">Close</span>
+                      <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                  </div>
+                  <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Age</h3>
+                  <div class="flex">
+                    <div class="flex items-center mr-4">
+                      <input id="any" type="radio" x-model="task.age"  value="Any" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                      <label for="any" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Any</label>
+                    </div>
+                    <div class="flex items-center mr-4">
+                      <input id="18-24" type="radio" x-model="task.age" value="18-24" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                      <label for="18-24" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">18-24</label>
+                    </div>
+                    <div class="flex items-center mr-4">
+                      <input checked id="25-34" type="radio" x-model="task.age"  value="25-34" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                      <label for="25-34" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">25-34</label>
+                    </div>
+                    <!-- Can be disabled if no creators with this age range -->
+                    <div class="flex items-center">
+                      <input disabled id="45+" type="radio" x-model="task.age"  value="45+" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                      <label for="45+" class="ml-2 text-sm font-medium text-gray-400 dark:text-gray-500">45+</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="flex items-center mr-4">
-                  <input id="18-24" type="radio" x-model="task.age" value="18-24" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                  <label for="18-24" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">18-24</label>
+                <div class="col-span-1 sm:col-span-1">
+                  <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Gender
+                  </label>
+                  <select id="gender" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="Any">Any</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Male</option>
+                  </select>
                 </div>
-                <div class="flex items-center mr-4">
-                  <input checked id="25-34" type="radio" x-model="task.age"  value="25-34" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                  <label for="25-34" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">25-34</label>
-                </div>
-                <!-- Can be disabled if no creators with this age range -->
-                <div class="flex items-center">
-                  <input disabled id="45+" type="radio" x-model="task.age"  value="45+" name="age" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                  <label for="45+" class="ml-2 text-sm font-medium text-gray-400 dark:text-gray-500">45+</label>
+                <div class="col-span-1 sm:col-span-1">
+                  <label for="creatorPreference" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Creator Preference
+                  </label>
+                  <input
+                          type="text"
+                          id="creatorPreference"
+                          name="creator_preference"
+                          placeholder="E.g. Can shoot in car, should have a pet"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 </div>
               </div>
             </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Gender
-              </label>
-              <select id="gender" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="Any">Any</option>
-                <option value="Male">Male</option>
-                <option value="Female">Male</option>
-              </select>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="creatorPreference" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Creator Preference
-              </label>
-              <input
-                      type="text"
-                      id="creatorPreference"
-                      name="creator_preference"
-                      placeholder="E.g. Can shoot in car, should have a pet"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-span-6 sm:col-span-3">
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Email
-              </label>
-              <input
-                      placeholder="Your Email"
-
-                      type="email"
-                      id="email"
-                      name="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Phone Number
-              </label>
-              <input
-                      placeholder="Your Phone Number"
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-            <div class="col-span-6 sm:col-span-6">
-              <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Address
-              </label>
-              <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      spellcheck="false"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                City
-              </label>
-              <input
-                      type="text"
-                      id="city"
-                      name="city"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                State
-              </label>
-              <select id="state" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected>Choose a State</option>
-                <option value="State 1">State 1</option>
-              </select>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Country
-              </label>
-              <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected>Choose a Country</option>
-                <option value="Country 1">Country 1</option>
-              </select>
-            </div>
-            <div class="col-span-6 sm:col-span-3">
-              <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Postal Code
-              </label>
-              <input
-                      type="text"
-                      id="postalCode"
-                      name="postal_code"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-            </div>
-
 
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <button class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
-                Save Profile
+              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Continue
               </button>
+              <!-- Remove this -->
+              <a href="/customer/add-task-review">Next Page</a>
             </div>
           </div>
         </form>
@@ -309,16 +746,18 @@ description: "Add Task Page"
     </div>
 
   </div>
+  <!--- If no brands are created --->
+  <div class="p-5 my-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <p class="text-center text-gray-400 dark:text-gray-300">To create a task you must first create a brand. Get started by clicking the button below to create.</p>
+    <a href="/customer/brands"
+       class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      Add Brand
+    </a>
+  </div>
 </div>
 
-<!--- If no brands are created --->
-<div class="p-5 mb-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-  <p class="text-center text-gray-400 dark:text-gray-300">To create a task you must first create a brand. Get started by clicking the button below to create.</p>
-  <a href="/customer/brands"
-          class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-    Add Brand
-  </a>
-</div>
+
+
 
 
 <script>
@@ -327,7 +766,13 @@ description: "Add Task Page"
       pageTitle: 'Add Task',
 
       task: {
-        age:''
+        age:'',
+        videoType: '1',
+        videoDuration: '1',
+        noOfVideos: 1,
+        noOfVideosRevisions: 3,
+        videAspectRatio: '1',
+        authPhotos: false,
       },
       user: {
         id: 1,
