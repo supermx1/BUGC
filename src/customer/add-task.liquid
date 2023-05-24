@@ -620,7 +620,33 @@ description: "Add Task Page"
                   </div>
                 </div>
               </div>
+            </div>
 
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creators Add-on</span>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-[3rem]">
+                <div>
+                  <img src="https://static.billo.app/public/content-examples/photos_bundle_web.png" class="w-[80%]" alt="image-1">
+                </div>
+                <div class="flex flex-col justify-center p-4">
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3">Post to Creators Social Media</h2>
+                  <p class="dark:text-gray-50 mb-5">Each creator that you will work with will produce authentic photos for thumbnails of your posts in your social media channels or your website.</p>
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>15,000<span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
+                  <div>
+                    <button type="button" x-on:click="task.creatorSocial = !task.creatorSocial" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                      <span x-html="task.creatorSocial ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="col-span-6 sm:col-span-6">
@@ -716,7 +742,7 @@ description: "Add Task Page"
                   <select id="gender" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="Any">Any</option>
                     <option value="Male">Male</option>
-                    <option value="Female">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
                 <div class="col-span-1 sm:col-span-1">
@@ -773,6 +799,7 @@ description: "Add Task Page"
         noOfVideosRevisions: 3,
         videAspectRatio: '1',
         authPhotos: false,
+        creatorSocial: false,
       },
       user: {
         id: 1,

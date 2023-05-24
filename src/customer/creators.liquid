@@ -11,7 +11,7 @@ description: "Creators Page"
   </div>
 
   <div class="px-3 pt-3 pb-6">
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div
               class="p-5 mb-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
         <p class="text-center text-gray-400 dark:text-gray-300">No content creators available. To receive requests, create
@@ -75,53 +75,83 @@ description: "Creators Page"
 
           <div class="flex flex-col justify-center action-button">
             <div class="flex justify-center">
-              <button type="button" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                <span class="sr-only">Icon description</span>
+              <button type="button" data-drawer-target="creatorDetails" data-drawer-show="creatorDetails" data-drawer-placement="right" aria-controls="creatorDetails" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
           </div>
+        </div>
 
+
+        <div id="creatorCard" data-accordion="collapse">
+          <h2 id="creatorCardHeading">
+            <button type="button" class="flex items-center justify-between w-full px-5 py-3 font-medium dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#creatorCardBody" aria-expanded="false" aria-controls="creatorCardBody">
+              <div class="flex items-center justify-between w-full">
+                <h1 class="text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>10,000<span class="text-xs font-normal">/Video</span></h1>
+                <div class="flex flex-col justify-center action-button">
+                  <div class="flex justify-center">
+                    <span class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="creatorCardBody" class="hidden" aria-labelledby="creatorCardHeading">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-4">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+              </p>
+              <span class="dark:text-gray-50">Rate:</span>
+              <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>10,000<span class="text-xs font-normal">/Video</span></h1>
+              <div class="grid grid-cols-2 gap-4">
+                <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                  Hire Me
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Creator Details Drawer right -->
+  <div id="creatorDetails" class="fixed z-50 top-0 right-0  h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-right-label">
+    <div class="flex items-center gap-4 px-4 py-2">
+      <img class="w-10 h-10 rounded-full border-gray-200 border-2 shadow-sm" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
+      <div class="font-medium dark:text-white">
+        <p>Jese Leos</p>
+        <div class="flex justify-between gap-2 w-full">
+          <span class="text-xs text-gray-500 dark:text-gray-400"><i class=" mr-1 fa-solid fa-camera"></i>180</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-star"></i>3.5</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-shield-heart"></i>98%</span>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-
-<!-- MODAL_______________ -->
-<div id="approve-modal" tabindex="-1"
-  class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-  <div class="relative w-full max-w-md max-h-full">
-    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-      <button type="button"
-        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-        data-modal-hide="approve-modal">
-        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"></path>
-        </svg>
-        <span class="sr-only">Close modal</span>
+    <button type="button" data-drawer-hide="creatorDetails" aria-controls="creatorDetails" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+      <i class="fa-solid fa-xmark text-lg"></i>
+      <span class="sr-only">Close menu</span>
+    </button>
+    <p class="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-4">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+    </p>
+    <span class="dark:text-gray-50">Rate:</span>
+    <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>10,000<span class="text-xs font-normal">/Video</span></h1>
+    <div class="grid grid-cols-2 gap-4">
+      <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+        Hire Me
       </button>
-      <div class="p-6 text-center">
-        <i class="mx-auto mb-4 text-3xl text-gray-400 fa-solid fa-triangle-exclamation dark:text-gray-200"></i>
-        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to accept this
-          creators offer?</h3>
-        <button data-modal-hide="approve-modal" type="button"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-          Yes,I'm sure
-        </button>
-        <button data-modal-hide="approve-modal" type="button"
-          class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
-          cancel</button>
-      </div>
     </div>
   </div>
+
 </div>
+
+
+
 <script>
   function index() {
     return {

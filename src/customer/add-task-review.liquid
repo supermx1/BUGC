@@ -267,24 +267,24 @@ description: "Add Task Review Page"
 
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <div class="hidden">
-                <div class="form-group">
+                <div>
                   <label for="email-address">Email Address</label>
                   <input type="email" id="email-address" x-model="user.email" required />
                 </div>
-                <div class="form-group">
+                <div>
                   <label for="amount">Amount</label>
                   <input type="tel" id="amount" x-model="amount"  required />
                 </div>
-                <div class="form-group">
+                <div>
                   <label for="first-name">First Name</label>
                   <input type="text" id="first-name" x-model="user.firstname" />
                 </div>
-                <div class="form-group">
+                <div>
                   <label for="last-name">Last Name</label>
                   <input type="text" id="last-name" x-model="user.lastname" />
                 </div>
               </div>
-              <button type="submit"  class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
                 Make Payment
               </button>
             </div>
@@ -329,7 +329,7 @@ description: "Add Task Review Page"
         let handler = PaystackPop.setup({
           key: 'pk_test_079319349ef980114fd4e079bd75f7729d383e41', // Replace public key
           email: this.user.email,
-          amount: this.amount,
+          amount: this.amount * 100,
           label: this.user.firstname + ' ' + this.user.lastname + '(' + this.user.email + ')',
           currency: "NGN",
           metadata: {
