@@ -12,6 +12,8 @@
     <meta property="og:site_name" content="7 Express" />
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
     <meta property="og:image" content="/assets/img/favicon.png">
     <meta name="twitter:image" content="/assets/img/favicon.png">
     <meta name="msapplication-TileColor" content="#da532c">
@@ -22,6 +24,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 !m-0" x-data="index()">
     <style>
@@ -137,36 +140,86 @@
         <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
             <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
                 <div>
-                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">BUGC</h3>
                     <ul class="text-gray-500 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class=" hover:underline">About</a>
+                            <a href="#" class="hover:underline">584 Castro St #2163 San Francisco, CA 94114</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Careers</a>
+                            <a href="#" class="hover:underline">Gedimino St. 22A-14 LT-44319 Kaunas, Lithuania</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Brand Center</a>
+                            <a href="#" class="hover:underline">+1 650 699 6740 </a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Blog</a>
+                            <a href="#" class="hover:underline">BUGC.com
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h3>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Browse by UGC category   </h3>
                     <ul class="text-gray-500 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Discord Server</a>
+                            <a href="#" class=" hover:underline">Health, Wellness,Fitness</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Twitter</a>
+                            <a href="#" class="hover:underline">Appeal</a>
                         </li>
                         <li class="mb-4">
-                         <a href="#" class="hover:underline">Facebook</a>
+                            <a href="#" class="hover:underline">Cosmetics</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Contact Us</a>
+                            <a href="#" class="hover:underline">Consumer goods</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Home</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Food</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Browse By UGC Channel</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Tiktok Videos</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Instagram video ads</a>
+                        </li>
+                        <li class="mb-4">
+                         <a href="#" class="hover:underline">Facebook video ads</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Youtube video ads</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Product Videos for amazon</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Product Videos for shopify</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h3>
+                    <ul class="text-gray-500 dark:text-gray-400">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">About Us</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Help Centre</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Affiliate Program</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Jobs</a>
                         </li>
                     </ul>
                 </div>
@@ -174,50 +227,18 @@
                     <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h3>
                     <ul class="text-gray-500 dark:text-gray-400">
                         <li class="mb-4">
+                            <a href="#" class=" hover:underline">Terms of Services</a>
+                        </li>
+                        <li class="mb-4">
                             <a href="#" class="hover:underline">Privacy Policy</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline">Licensing</a>
+                            <a href="#" class="hover:underline">Refund Policy</a>
                         </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Terms</a>
-                        </li>
+                        
                     </ul>
                 </div>
-                <div>
-                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h3>
-                    <ul class="text-gray-500 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="#" class=" hover:underline">About</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Careers</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Brand Center</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h3>
-                    <ul class="text-gray-500 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">iOS</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Android</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">Windows</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline">MacOS</a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
             <div class="text-center">
