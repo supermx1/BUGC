@@ -15,6 +15,7 @@ description: "Add Task Page"
         </div>
       </div>
     </div>
+
     <div class="w-full m-auto">
 
       <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
@@ -370,6 +371,26 @@ description: "Add Task Page"
 
               </div>
             </div>
+
+            <!-- Video Scene -->
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Video Scene Title -->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Scene</span>
+                </div>
+              </div>
+
+              <!-- Video Duration Cards -->
+              <div x-show="task.videoType !== '4'" class="mb-[3rem]">
+                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Additional details</label>
+                <p class="dark:text-gray-50 my-3 text-sm">Anything that would help the creator deliver a perfect video</p>
+                <textarea id="message" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+              </div>
+            </div>
             <!-- Video Aspect Ratio  -->
             <div x-cloak x-show="task.videoType === '1' || task.videoType === '3' || task.videoType === '4'" class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
@@ -382,12 +403,12 @@ description: "Add Task Page"
                 </div>
               </div>
               <!-- Video Aspect Ratio Cards -->
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-[3rem]">
-                <div>
+              <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-[3rem]">
+                <div class="col-span-1 flex flex-col">
                   <input type="radio" name="video_aspect_ratio" value="1" x-model="task.videAspectRatio" id="fullPortrait"
                          class="peer hidden [&:checked_+_label_svg]:block" checked />
                   <label for="fullPortrait"
-                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
                       <div class="flex">
                         <div class="w-[45px]">
@@ -410,11 +431,11 @@ description: "Add Task Page"
                     <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Stories, Reels or Shorts for social media marketing.</p>
                   </label>
                 </div>
-                <div>
+                <div class="col-span-1 flex flex-col">
                   <input type="radio" name="video_aspect_ratio" value="2" x-model="task.videAspectRatio" id="landscape"
                          class="peer hidden [&:checked_+_label_svg]:block" />
                   <label for="landscape"
-                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
                       <div class="flex">
                         <div class="w-[45px]">
@@ -437,11 +458,11 @@ description: "Add Task Page"
                     <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Display ads in Amazon, Youtube, Twitter.</p>
                   </label>
                 </div>
-                <div>
+                <div class="col-span-1 flex flex-col">
                   <input type="radio" name="video_aspect_ratio" value="3" x-model="task.videAspectRatio" id="vertical"
                          class="peer hidden [&:checked_+_label_svg]:block"  />
                   <label for="vertical"
-                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
                       <div class="flex">
                         <div class="w-[45px]">
@@ -464,11 +485,11 @@ description: "Add Task Page"
                     <p class="mt-1 text-gray-600 text-sm dark:text-gray-50">Feed placement ads for social media marketing.</p>
                   </label>
                 </div>
-                <div>
+                <div class="col-span-1 flex flex-col">
                   <input type="radio" name="video_aspect_ratio" value="4" x-model="task.videAspectRatio" id="square"
                          class="peer hidden [&:checked_+_label_svg]:block"  />
                   <label for="square"
-                         class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
+                         class="h-full block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
                       <div class="flex">
                         <div class="w-[45px]">
@@ -617,6 +638,11 @@ description: "Add Task Page"
                       <span x-html="task.authPhotos ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
                     </button>
 
+                    <div x-show="task.authPhotos" class="mb-[3rem] mt-3">
+                      <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Additional details</label>
+                      <p class="dark:text-gray-50 my-3 text-sm">Anything that would help the creator deliver a perfect video</p>
+                      <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tell us what you expect from each of the photos."></textarea>
+                    </div>
                   </div>
                 </div>
               </div>

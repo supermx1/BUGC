@@ -1,44 +1,63 @@
 ---
 layout: user-dashboard-layout
-title: "Add Task Review"
-description: "Add Task Review Page"
+title: "Task Details"
+description: "Task Details Page"
 ---
 <div class="px-3 py-6 mt-14" x-data="head">
   <div>
     <div class="grid grid-cols-4 mb-4">
-      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
-      <div class="flex justify-end col-span-3 gap-4">
-        <div class="flex gap-1">
+      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-2 gap-4">
+        <div class="flex gap-1" x-data="index()">
+          <!-- Open a page similar to Add Task -->
           <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <i class="fa-solid fa-download"></i>
+            <span x-cloak x-html="status === 3 ? `<i class='fa-solid fa-pen'></i>` : `<i class='fa-solid fa-download'></i>`"></span>
           </button>
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            Save as Draft
+
+          <button x-cloak x-show="status === 3"  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
+            Delete
           </button>
+
         </div>
       </div>
     </div>
     <div class="w-full m-auto">
       <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
-        <li class="flex items-center">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-            1
-        </span>
-          Video Details
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
         <li class="flex items-center text-blue-600 dark:text-blue-500">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
-            2
-        </span>
-          Video Brief Review
+          <a href="/customer/task/1/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
+              1
+            </span>
+              Brief
+            <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a href="/customer/task/1/applications/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                2
+            </span>
+              Applications
+            </a>
           <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
         </li>
         <li class="flex items-center">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-            3
-        </span>
-          Payment
+          <a href="/customer/task/1/delivery/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                3
+            </span>
+              Product Delivery
+          </a>
+          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+        </li>
+
+        <li class="flex items-center">
+          <a href="/customer/task/1/submissions/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                4
+            </span>
+              Video Submissions
+            </a>
         </li>
       </ol>
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -65,16 +84,16 @@ description: "Add Task Review Page"
               <table class="table-auto border-none w-[60%]">
                 <tbody>
                 <tr class="">
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Name</td>
-                  <td class="border-none dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Name</td>
+                  <td class="border-none">
                     TikTok video for Getfittec , Female</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Campaign Goals</td>
-                  <td class="border-none dark:text-gray-50">Consideration (engagements / conversation / video views)</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Campaign Goals</td>
+                  <td class="border-none">Consideration (engagements / conversation / video views)</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Status</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Status</td>
                   <td class="border-none">
                     <span class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
                         Active
@@ -135,30 +154,30 @@ description: "Add Task Review Page"
               <table class="table-auto border-none w-[60%]">
                 <tbody>
                 <tr class="">
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Order</td>
-                  <td class="border-none px-4 dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Order</td>
+                  <td class="border-none px-4">
                     2 videos
                   </td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Video type</td>
-                  <td class="border-none px-4 dark:text-gray-50">TikTok - Premium</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Video type</td>
+                  <td class="border-none px-4">TikTok - Premium</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Duration</td>
-                  <td class="border-none px-4 dark:text-gray-50">60 seconds</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Duration</td>
+                  <td class="border-none px-4">60 seconds</td>
                 </tr>
                 <tr>
                   <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Aspect Ratio</td>
-                  <td class="border-none px-4 dark:text-gray-50">9:16</td>
+                  <td class="border-none px-4">9:16</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Additional Details</td>
-                  <td class="border-none px-4 dark:text-gray-50">We would like you to create informative content about GetFit waist trainers and shapewear, showcasing how they can be used to achieve a specific look or body shape. Lastly, direct your followers tactfully to purchase our product on our website GetFitTec.com</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Additional Details</td>
+                  <td class="border-none px-4">We would like you to create informative content about GetFit waist trainers and shapewear, showcasing how they can be used to achieve a specific look or body shape. Lastly, direct your followers tactfully to purchase our product on our website GetFitTec.com</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Add-Ons</td>
-                  <td class="border-none px-4 dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Add-Ons</td>
+                  <td class="border-none px-4">
                     <ul class="flex justify-between max-w-sm space-y-1 text-gray-500 list-inside dark:text-gray-100 text-sm">
                       <li class="flex items-center">
                         <i class="fa-solid fa-check mr-1.5 text-blue-600 dark:text-blue-400 flex-shrink-0"></i>
@@ -191,14 +210,14 @@ description: "Add Task Review Page"
               <table class="table-auto border-none w-[60%]">
                 <tbody>
                 <tr class="">
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">4 Photos per Creator</td>
-                  <td class="border-none px-4 dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">4 Photos per Creator</td>
+                  <td class="border-none px-4">
                     Yes
                   </td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Description</td>
-                  <td class="border-none px-4 dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Description</td>
+                  <td class="border-none px-4">
                     For example: 1. Instagram-style product shot in the natural environment 2. Video thumbnail - high-quality image from the video shoot 3. Selfie with a product 4. Product highlight shot - product in use under a dress and product in use without a dress on.
                   </td>
                 </tr>
@@ -219,26 +238,26 @@ description: "Add Task Review Page"
               <table class="table-auto border-none w-[60%]">
                 <tbody>
                 <tr class="">
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Gender</td>
-                  <td class="border-none px-4 dark:text-gray-50">Female</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Gender</td>
+                  <td class="border-none px-4">Female</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Age</td>
-                  <td class="border-none px-4 dark:text-gray-50">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Age</td>
+                  <td class="border-none px-4">
                     18-24
                   </td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Country</td>
-                  <td class="border-none px-4 dark:text-gray-50">Nigeria</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Country</td>
+                  <td class="border-none px-4">Nigeria</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Creator Preference</td>
-                  <td class="border-none px-4 dark:text-gray-50">curvy or appealing body size/figure that shows the effectiveness of a waist trainer.</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Creator Preference</td>
+                  <td class="border-none px-4">curvy or appealing body size/figure that shows the effectiveness of a waist trainer.</td>
                 </tr>
                 <tr>
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Creator Experience</td>
-                  <td class="border-none px-4 dark:text-gray-50">Premium Creator</td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Creator Experience</td>
+                  <td class="border-none px-4">Premium Creator</td>
                 </tr>
                 </tbody>
               </table>
@@ -258,33 +277,14 @@ description: "Add Task Review Page"
               <table class="table-auto border-none w-[60%]">
                 <tbody>
                 <tr class="">
-                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Total Budget</td>
-                  <td class="border-none px-4 font-bold text-xl dark:text-gray-50"><span x-text="currency + new Intl.NumberFormat('en-NG').format(amount)"></span></td>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%]">Total Budget</td>
+                  <td class="border-none px-4 font-bold text-xl"><span x-text="currency + new Intl.NumberFormat('en-NG').format(amount)"></span></td>
                 </tr>
                 </tbody>
               </table>
             </div>
-
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <div class="hidden">
-                <div>
-                  <label for="email-address">Email Address</label>
-                  <input type="email" id="email-address" x-model="user.email" required />
-                </div>
-                <div>
-                  <label for="amount">Amount</label>
-                  <input type="tel" id="amount" x-model="amount"  required />
-                </div>
-                <div>
-                  <label for="first-name">First Name</label>
-                  <input type="text" id="first-name" x-model="user.firstname" />
-                </div>
-                <div>
-                  <label for="last-name">Last Name</label>
-                  <input type="text" id="last-name" x-model="user.lastname" />
-                </div>
-              </div>
-              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+              <button x-show="status === 3" type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
                 Make Payment
               </button>
             </div>
@@ -296,15 +296,12 @@ description: "Add Task Review Page"
   </div>
 </div>
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script>
 
   function index() {
     return {
-      pageTitle: 'Add Task',
-      paymentForm: document.getElementById('paymentForm'),
-
+      pageTitle: 'TikTok video for Getfittec , Female',
       task: {
         age:'',
         videoType: '1',
@@ -322,38 +319,7 @@ description: "Add Task Review Page"
         kyc: true
       },
       amount: 69000,
-      payWithPaystack() {
-        let handler = PaystackPop.setup({
-          key: 'pk_test_079319349ef980114fd4e079bd75f7729d383e41', // Replace public key
-          email: this.user.email,
-          amount: this.amount * 100,
-          label: this.user.firstname + ' ' + this.user.lastname + '(' + this.user.email + ')',
-          currency: "NGN",
-          metadata: {
-            custom_fields: [
-              {
-                firstname: this.user.firstname,
-                lastname: this.user.lastname,
-                phone: "+2348012345678"
-              }
-            ]
-          },
-          firstname: this.user.firstname,
-          lastname: this.user.lastname,
-          ref: `BUGC`+Math.floor((Math.random() * 1000000000) + 1), // code your own reference number or remove it, paystack go run am.
-          // label: "Optional string that replaces customer email"
-          onClose: function(){
-            alert('Payment not successful. Window closed!');
-          },
-          callback: function(response){
-            window.location = "https://bugc.com/verify-transaction/?reference=" + response.reference;
-            // let message = 'Payment complete! Reference: ' + response.reference;
-            // alert(message);
-          }
-        });
-
-        handler.openIframe();
-      }
+      status: 3,
     }
   }
 </script>

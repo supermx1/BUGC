@@ -1,50 +1,27 @@
 ---
-layout: user-dashboard-layout
-title: "Add Task Review"
-description: "Add Task Review Page"
+layout: creator-dashboard-layout
+title: "Task Details"
+description: "Task Details Page"
 ---
 <div class="px-3 py-6 mt-14" x-data="head">
   <div>
     <div class="grid grid-cols-4 mb-4">
-      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
-      <div class="flex justify-end col-span-3 gap-4">
+      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-2 gap-4">
         <div class="flex gap-1">
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <i class="fa-solid fa-download"></i>
+          <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Accept Task
           </button>
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            Save as Draft
+          <button type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
+            Dismiss
           </button>
         </div>
       </div>
     </div>
     <div class="w-full m-auto">
-      <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
-        <li class="flex items-center">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-            1
-        </span>
-          Video Details
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
-        <li class="flex items-center text-blue-600 dark:text-blue-500">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
-            2
-        </span>
-          Video Brief Review
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
-        <li class="flex items-center">
-        <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-            3
-        </span>
-          Payment
-        </li>
-      </ol>
+
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <form
-                x-on:submit.prevent="payWithPaystack()"
-                id="paymentForm"
                 action="#"
                 method="POST"
                 class="space-y-6 rounded-lg"
@@ -76,9 +53,7 @@ description: "Add Task Review Page"
                 <tr>
                   <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Status</td>
                   <td class="border-none">
-                    <span class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
-                        Active
-                      </span>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Open</span>
                   </td>
                 </tr>
                 </tbody>
@@ -92,7 +67,7 @@ description: "Add Task Review Page"
                 </div>
                 <!-- Products Title -->
                 <div class="relative flex justify-start">
-                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Your Product(s)</span>
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Product(s)</span>
                 </div>
               </div>
               <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -245,7 +220,7 @@ description: "Add Task Review Page"
 
             </div>
             <!-- Video Aspect Ratio  -->
-            <div x-cloak x-show="task.videoType === '1' || task.videoType === '3' || task.videoType === '4'" class="col-span-6 sm:col-span-6">
+            <div class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
@@ -266,26 +241,8 @@ description: "Add Task Review Page"
             </div>
 
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <div class="hidden">
-                <div>
-                  <label for="email-address">Email Address</label>
-                  <input type="email" id="email-address" x-model="user.email" required />
-                </div>
-                <div>
-                  <label for="amount">Amount</label>
-                  <input type="tel" id="amount" x-model="amount"  required />
-                </div>
-                <div>
-                  <label for="first-name">First Name</label>
-                  <input type="text" id="first-name" x-model="user.firstname" />
-                </div>
-                <div>
-                  <label for="last-name">Last Name</label>
-                  <input type="text" id="last-name" x-model="user.lastname" />
-                </div>
-              </div>
               <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
-                Make Payment
+                Accept Task
               </button>
             </div>
           </div>
@@ -296,23 +253,13 @@ description: "Add Task Review Page"
   </div>
 </div>
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
 
 <script>
 
   function index() {
     return {
-      pageTitle: 'Add Task',
-      paymentForm: document.getElementById('paymentForm'),
+      pageTitle: 'TikTok video for Getfittec , Female',
 
-      task: {
-        age:'',
-        videoType: '1',
-        videoDuration: '1',
-        noOfVideos: 1,
-        videAspectRatio: '1',
-        authPhotos: false,
-      },
       user: {
         id: 1,
         firstname: 'Robert',
@@ -322,38 +269,6 @@ description: "Add Task Review Page"
         kyc: true
       },
       amount: 69000,
-      payWithPaystack() {
-        let handler = PaystackPop.setup({
-          key: 'pk_test_079319349ef980114fd4e079bd75f7729d383e41', // Replace public key
-          email: this.user.email,
-          amount: this.amount * 100,
-          label: this.user.firstname + ' ' + this.user.lastname + '(' + this.user.email + ')',
-          currency: "NGN",
-          metadata: {
-            custom_fields: [
-              {
-                firstname: this.user.firstname,
-                lastname: this.user.lastname,
-                phone: "+2348012345678"
-              }
-            ]
-          },
-          firstname: this.user.firstname,
-          lastname: this.user.lastname,
-          ref: `BUGC`+Math.floor((Math.random() * 1000000000) + 1), // code your own reference number or remove it, paystack go run am.
-          // label: "Optional string that replaces customer email"
-          onClose: function(){
-            alert('Payment not successful. Window closed!');
-          },
-          callback: function(response){
-            window.location = "https://bugc.com/verify-transaction/?reference=" + response.reference;
-            // let message = 'Payment complete! Reference: ' + response.reference;
-            // alert(message);
-          }
-        });
-
-        handler.openIframe();
-      }
     }
   }
 </script>

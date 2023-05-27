@@ -1,0 +1,187 @@
+---
+layout: user-dashboard-layout
+title: "Task Details - Delivery"
+description: "Task Details Page"
+---
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-2 gap-4">
+        <div class="flex gap-1" x-data="index()">
+          <!-- Open a page similar to Add Task -->
+          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            <span x-cloak x-html="status === 3 ? `<i class='fa-solid fa-pen'></i>` : `<i class='fa-solid fa-download'></i>`"></span>
+          </button>
+
+          <button x-cloak x-show="status === 3"  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
+            Delete
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <div class="w-full m-auto">
+      <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
+        <li class="flex items-center">
+          <a href="/customer/task/1/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border rounded-full shrink-0 border-gray-500 dark:border-gray-400">
+              1
+            </span>
+              Brief
+            <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a href="/customer/task/1/applications/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                2
+            </span>
+              Applications
+            </a>
+          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+        </li>
+        <li class="flex items-center text-blue-600 dark:text-blue-500">
+          <a href="/customer/task/1/delivery/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border  rounded-full shrink-0  border-blue-600 dark:border-blue-500">
+                3
+            </span>
+              Product Delivery
+          </a>
+          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+        </li>
+
+        <li class="flex items-center">
+          <a href="/customer/task/1/submissions/" class="w-full flex items-center">
+            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
+                4
+            </span>
+              Video Submissions
+            </a>
+        </li>
+      </ol>
+
+
+      <!-- Table -->
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Tasks
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Products
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Creator
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Status
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Action
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <a href="/" class="text-blue-600 hover:text-blue-800">6865</a>
+          </th>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            5
+          </th>
+          <td class="px-6 py-4">
+            <div class="flex items-center">
+              <img
+                      class="object-cover w-6 h-6 mr-1 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                      alt=""> Tim Millar
+            </div>
+          </td>
+          <td class="px-6 py-4">
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">
+                  Awaiting Shipping
+                </span>
+          </td>
+          <td class="px-6 py-4">
+            <a
+                    data-modal-target="approve-modal"
+                    data-modal-toggle="approve-modal"
+                    href="#"
+                    class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Mark as Shipped</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+          <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing
+            <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+            of
+            <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+          </span>
+        <ul class="inline-flex items-center -space-x-px">
+          <li>
+            <a href="#" class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <span class="sr-only">Previous</span>
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+          </li>
+          <li>
+            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+          </li>
+          <li>
+            <a
+                    href="#"
+                    aria-current="page"
+                    class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+          </li>
+          <li>
+            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+          </li>
+          <li>
+            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <span class="sr-only">Next</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+  function index() {
+    return {
+      pageTitle: 'TikTok video for Getfittec , Female',
+      task: {
+        age:'',
+        videoType: '1',
+        videoDuration: '1',
+        noOfVideos: 1,
+        videAspectRatio: '1',
+        authPhotos: false,
+      },
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+      amount: 69000,
+      status: 3,
+    }
+  }
+</script>
