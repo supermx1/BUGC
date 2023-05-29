@@ -86,7 +86,6 @@ description: "Task Details Page"
       <div class="px-3 pt-3 pb-6">
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
             <div class="flex items-center gap-4 px-4 py-2">
               <img class="w-10 h-10 rounded-full border-gray-200 border-2 shadow-sm" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
               <div class="font-medium dark:text-white">
@@ -98,46 +97,51 @@ description: "Task Details Page"
                 </div>
               </div>
             </div>
-
             <div class="px-4 py-2">
               <video src="https://static.billo.app/user-content/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.mov"
                      poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
                      class="w-full aspect-[3/4] rounded-lg object-cover" controls>
               </video>
             </div>
-
-            <div class="flex items-center p-5 justify-evenly">
-
-              <div class="flex flex-col justify-center action-button">
-                <div class="flex justify-center">
-                  <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
-                          class="text-white !m-0 bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">
-                    <i class="w-5 h-5 text-sm fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
-                   class="font-medium text-red-600 dark:text-red-500">
-                  <span class="text-center text-pink-600">Reject</span>
-                </a>
-
-
-              </div>
-
-              <div class="flex flex-col justify-center action-button">
-                <div class="flex justify-center">
-                  <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
-                          class="text-white !m-0 !bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
-                    <i class="w-5 h-5 text-sm fa-solid fa-check"></i>
-                  </button>
-                </div>
-                <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
-                   class="font-medium text-green-600 dark:text-green-500">
-                  <span class="text-center text-teal-600">Approve</span>
-                </a>
-
-              </div>
+            <div class="flex justify-between items-center px-4 pt-3">
+              <p class="text-gray-900 text-lg font-bold dark:text-gray-50">Description</p>
+              <span class="text-xs opacity-80 dark:text-gray-200">23 March 2023 7:09PM</span>
 
             </div>
+            <div class="px-4">
+              <p class="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-4">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+              </p>
+            </div>
+
+              <div class="flex items-center p-5 justify-evenly">
+                <div class="flex flex-col justify-center action-button">
+                  <div class="flex justify-center">
+                    <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
+                            class="text-white !m-0 bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">
+                      <i class="w-5 h-5 text-sm fa-solid fa-xmark"></i>
+                    </button>
+                  </div>
+                  <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
+                     class="font-medium text-red-600 dark:text-red-500">
+                    <span class="text-center text-pink-600">Reject</span>
+                  </a>
+                </div>
+                <div class="flex flex-col justify-center action-button">
+                  <div class="flex justify-center">
+                    <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
+                            class="text-white !m-0 !bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
+                      <i class="w-5 h-5 text-sm fa-solid fa-check"></i>
+                    </button>
+                  </div>
+                  <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
+                     class="font-medium text-green-600 dark:text-green-500">
+                    <span class="text-center text-teal-600">Approve</span>
+                  </a>
+
+                </div>
+              </div>
+
           </div>
         </div>
       </div>

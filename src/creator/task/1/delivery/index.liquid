@@ -1,5 +1,5 @@
 ---
-layout: user-dashboard-layout
+layout: creator-dashboard-layout
 title: "Task Details - Delivery"
 description: "Task Details Page"
 ---
@@ -9,13 +9,9 @@ description: "Task Details Page"
       <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
       <div class="flex justify-end col-span-2 gap-4">
         <div class="flex gap-1" x-data="index()">
-          <!-- Open a page similar to Add Task -->
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <span x-cloak x-html="status === 3 ? `<i class='fa-solid fa-pen'></i>` : `<i class='fa-solid fa-download'></i>`"></span>
-          </button>
 
-          <button x-cloak x-show="status === 3"  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
-            Delete
+          <button type="button" class="whitespace-nowrap text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Mark as Completed
           </button>
 
         </div>
@@ -24,7 +20,7 @@ description: "Task Details Page"
     <div class="w-full m-auto">
       <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
         <li class="flex items-center">
-          <a href="/customer/task/1/" class="w-full flex items-center">
+          <a href="/creator/task/1/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border rounded-full shrink-0 border-gray-500 dark:border-gray-400">
               1
             </span>
@@ -32,19 +28,10 @@ description: "Task Details Page"
             <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
           </a>
         </li>
-        <li class="flex items-center">
-          <a href="/customer/task/1/applications/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                2
-            </span>
-              Applications
-            </a>
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
         <li class="flex items-center text-blue-600 dark:text-blue-500">
-          <a href="/customer/task/1/delivery/" class="w-full flex items-center">
+          <a href="/creator/task/1/delivery/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border  rounded-full shrink-0  border-blue-600 dark:border-blue-500">
-                3
+                2
             </span>
               Product Delivery
           </a>
@@ -52,9 +39,9 @@ description: "Task Details Page"
         </li>
 
         <li class="flex items-center">
-          <a href="/customer/task/1/submissions/" class="w-full flex items-center">
+          <a href="/creator/task/1/submissions/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                4
+                3
             </span>
               Video Submissions
             </a>
@@ -62,6 +49,7 @@ description: "Task Details Page"
       </ol>
 
 
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <!-- Table -->
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -73,7 +61,7 @@ description: "Task Details Page"
             Products
           </th>
           <th scope="col" class="px-6 py-3">
-            Creator
+            User
           </th>
           <th scope="col" class="px-6 py-3">
             Status
@@ -101,60 +89,63 @@ description: "Task Details Page"
           </td>
           <td class="px-6 py-4">
                 <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">
-                  Awaiting Shipping
+                  Awaiting Address Confirmation
                 </span>
           </td>
           <td class="px-6 py-4">
             <a
-                    data-modal-target="approve-modal"
-                    data-modal-toggle="approve-modal"
+                    data-modal-target="confirm-address-modal"
+                    data-modal-toggle="confirm-address-modal"
                     href="#"
-                    class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Mark as Shipped</a>
+                    class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Confirm Address</a>
           </td>
         </tr>
         </tbody>
       </table>
-      <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
-          <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing
-            <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
-            of
-            <span class="font-semibold text-gray-900 dark:text-white">1000</span>
-          </span>
-        <ul class="inline-flex items-center -space-x-px">
-          <li>
-            <a href="#" class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <span class="sr-only">Previous</span>
-              <i class="fa-solid fa-chevron-left"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-          </li>
-          <li>
-            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-          </li>
-          <li>
-            <a
-                    href="#"
-                    aria-current="page"
-                    class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-          </li>
-          <li>
-            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
-          </li>
-          <li>
-            <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-          </li>
-          <li>
-            <a href="#" class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-              <span class="sr-only">Next</span>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      </div>
     </div>
 
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+        id="confirm-address-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="confirm-address-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Confirm Address</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()"
+        >
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6">
+              <label for="shippingAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Shipping Address</label>
+              <textarea x-model="user.address" id="shippingAddress" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your shipping address"></textarea>
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -178,7 +169,8 @@ description: "Task Details Page"
         lastname: 'Pinkman',
         email: 'jessepinkman@gmail.com',
         image: 'profile.jpeg',
-        kyc: true
+        kyc: true,
+        address: 'No.1 Big Avenue, Los Angeles, California',
       },
       amount: 69000,
       status: 3,

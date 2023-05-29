@@ -1,69 +1,24 @@
 ---
-layout: user-dashboard-layout
-title: "Task Details"
-description: "Task Details Page"
+layout: admin-dashboard-layout
+title: "Task Review"
+description: "Task Review Page"
 ---
 <div class="px-3 py-6 mt-14" x-data="head">
   <div>
     <div class="grid grid-cols-4 mb-4">
-      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
-      <div class="flex justify-end col-span-2 gap-4">
-        <div class="flex gap-1" x-data="index()">
-          <!-- Open a page similar to Add Task -->
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <span x-cloak x-html="status === 3 ? `<i class='fa-solid fa-pen'></i>` : `<i class='fa-solid fa-download'></i>`"></span>
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex gap-1">
+          <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Accept
           </button>
-
-          <button x-cloak x-show="status === 3"  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
-            Delete
-          </button>
-
         </div>
       </div>
     </div>
     <div class="w-full m-auto">
-      <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
-        <li class="flex items-center text-blue-600 dark:text-blue-500">
-          <a href="/customer/task/1/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 rounded-full shrink-0 dark:border-blue-500">
-              1
-            </span>
-              Brief
-            <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-          </a>
-        </li>
-        <li class="flex items-center">
-          <a href="/customer/task/1/applications/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                2
-            </span>
-              Applications
-            </a>
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
-        <li class="flex items-center">
-          <a href="/customer/task/1/delivery/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                3
-            </span>
-              Product Delivery
-          </a>
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
-
-        <li class="flex items-center">
-          <a href="/customer/task/1/submissions/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                4
-            </span>
-              Video Submissions
-            </a>
-        </li>
-      </ol>
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <form
-                x-on:submit.prevent="payWithPaystack()"
-                id="paymentForm"
+                id=""
                 action="#"
                 method="POST"
                 class="space-y-6 rounded-lg"
@@ -283,9 +238,51 @@ description: "Task Details Page"
                 </tbody>
               </table>
             </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Video Aspect Ratio Title-->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Task Status</span>
+                </div>
+              </div>
+              <table class="table-auto border-none w-[60%]">
+                <tbody>
+                <tr class="">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="status">Status</label></td>
+                  <td class="border-none px-4 font-bold text-xl dark:text-gray-50">
+                    <select id="status" x-model="status" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[50%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Choose a Status</option>
+                      <option value="1">Accept</option>
+                      <option value="2">Reject</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr x-cloak
+                    x-show="status === '2'"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="pt-5"
+                >
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="reason">Reason</label></td>
+                  <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-5">
+                    <textarea id="reason" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write something creative that users will see."></textarea>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <button  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
-                Cancel and Request Refund
+              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Update Status
               </button>
             </div>
           </div>
@@ -296,20 +293,12 @@ description: "Task Details Page"
   </div>
 </div>
 
-
 <script>
 
   function index() {
     return {
-      pageTitle: 'TikTok video for Getfittec , Female',
-      task: {
-        age:'',
-        videoType: '1',
-        videoDuration: '1',
-        noOfVideos: 1,
-        videAspectRatio: '1',
-        authPhotos: false,
-      },
+      pageTitle: 'Task Name Goes Here',
+      status: null,
       user: {
         id: 1,
         firstname: 'Robert',
@@ -319,7 +308,6 @@ description: "Task Details Page"
         kyc: true
       },
       amount: 69000,
-      status: 3,
     }
   }
 </script>
