@@ -210,7 +210,6 @@ description: "Profile Page"
   function index() {
     return {
       pageTitle: 'Profile',
-      brandOption: 'Choose Brand',
       profile: {
         firstName: '',
         lastName: '',
@@ -224,14 +223,16 @@ description: "Profile Page"
         image: 'profile.jpeg',
         kyc: true
       },
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
       brands: [
         {
-          id: 1,
+          id: "uuid-2233ff",
           name: 'Brand 1',
           description: 'Brand 1 description',
         },
         {
-          id: 2,
+          id: "uuid-3kljh456kljweh",
           name: 'Brand 2',
           description: 'Brand 2 description',
         }

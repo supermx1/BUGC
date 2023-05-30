@@ -24,11 +24,10 @@ description: "User Details Page"
       <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="grid md:!grid-cols-6 grid-cols-1 mb-4 !divide-gray-100 dark:!divide-gray-700  md:divide-x ">
           <div class="col-span-2">
-
               <div class="flex justify-end px-4 pt-4">
                 <button id="userDetailsDropdown" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
                   <span class="sr-only">Open dropdown</span>
-                  <i class="fa-solid fa-ellipsis-vertical text-xl w-6 h-6"></i>
+                  <i class="fa-solid fa-ellipsis-vertical w-5 h-5"></i>
                 </button>
                 <!-- Dropdown menu -->
                 <div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
@@ -276,7 +275,7 @@ description: "User Details Page"
             id="user-settings-list"
             data-tabs-toggle="#user-settings"
             role="tablist">
-            <!--- Video Type --->
+            <!--- Tasks --->
             <li class="mr-2" role="presentation">
               <button
                 class="inline-block p-4 border-b-2 rounded-t-lg"
@@ -284,13 +283,13 @@ description: "User Details Page"
                 data-tabs-target="#tasks"
                 type="button"
                 role="tab"
-                aria-controls="video-type"
+                aria-controls="tasks"
                 aria-selected="true">
                 <i class="mr-1 fa-solid fa-list-check"></i>
                 Tasks
               </button>
             </li>
-            <!--- Video Duration --->
+            <!--- Transaction History --->
             <li class="mr-2" role="presentation">
               <button
                 class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
@@ -298,14 +297,26 @@ description: "User Details Page"
                 data-tabs-target="#transaction-history"
                 type="button"
                 role="tab"
-                aria-controls="video-duration"
+                aria-controls="transaction-history"
                 aria-selected="false">
                 <i class="mr-1 fa-solid fa-money-bill-transfer"></i>
                 Transaction History
               </button>
             </li>
-
-
+            <!--- Brands--->
+            <li class="mr-2" role="presentation">
+              <button
+                      class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                      id="brands-tab"
+                      data-tabs-target="#brands"
+                      type="button"
+                      role="tab"
+                      aria-controls="brands"
+                      aria-selected="false">
+                <i class="mr-1 fa-solid fa-copyright"></i>
+                Brands
+              </button>
+            </li>
           </ul>
         </div>
         <div id="user-settings">
@@ -534,6 +545,71 @@ description: "User Details Page"
                 </li>
               </ul>
             </nav>
+          </div>
+          <!--- Brands --->
+          <div
+                  class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                  id="brands"
+                  role="tabpanel"
+                  aria-labelledby="brands-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Brand Name
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Country
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Content Units Order
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Content Units Completed
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Date Created
+                  </th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                      <div class="flex items-center">
+                        <img
+                                class="object-cover w-6 h-6 mr-1 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                src="/assets/img/favicon.png"
+                                alt="brand-logo">
+                        Test Brand
+                      </div>
+
+                  </td>
+
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Nigeria
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    12
+                  </td>
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-data="head"></span>0
+                  </td>
+
+                  <td class="px-6 py-4">
+                    27 March 2023
+                  </td>
+
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

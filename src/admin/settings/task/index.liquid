@@ -549,10 +549,22 @@ description: "Task Settings Page"
                 x-data="index()">
           <div class="grid grid-cols-6 gap-4 mt-8">
             <div class="col-span-6 sm:col-span-6">
-              <label for="videoType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              <label for="videoType1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Video Type
+                <!-- <a data-modal-target="add-video-type-modal" data-modal-toggle="add-video-type-modal"  class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                  + Add Video Type
+                </a> -->
+              </label>
+              <select id="videoType1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="1">TikTok</option>
+                <option value="2">Instagram</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="durationTitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Duration Title
               </label>
-              <input type="text" id="videoType" placeholder="30 Secs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <input type="text" id="durationTitle" placeholder="30 Secs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <div class="col-span-6 sm:col-span-6">
               <label for="videoDurationAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
