@@ -1,0 +1,166 @@
+---
+layout: admin-dashboard-layout
+title: "Payment Details"
+description: "Payment Details Page"
+---
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-2 gap-4">
+        <div class="flex gap-1">
+          <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Mark as Paid
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full m-auto">
+
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <form
+                action="#"
+                method="POST"
+                class="space-y-6 rounded-lg"
+                x-data="index()">
+
+          <div class="grid grid-cols-6 gap-6 mt-2">
+            <div class="col-span-6 sm:col-span-6">
+              <!-- Products -->
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Products Title -->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Payment Details</span>
+                </div>
+              </div>
+              <table class="table-auto border-none w-[60%]">
+                <tbody>
+                <tr class="">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">User</td>
+                  <td class="border-none dark:text-gray-50">
+                    <div class="flex items-center">
+                      <a href="#" class="flex">
+                        <img
+                                class="object-cover w-6 h-6 mr-1 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                                alt=""> Tim Millar
+                      </a>
+
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Amount</td>
+                  <td class="border-none dark:text-gray-50 font-bold"><span x-text="currency"></span>89,000</td>
+                </tr>
+                <tr>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Status</td>
+                  <td class="border-none">
+                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">Unpaid</span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Video Type -->
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Video Title -->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Bank Details</span>
+                </div>
+              </div>
+              <table class="table-auto border-none w-[60%]">
+                <tbody>
+                <tr class="">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Bank Name</td>
+                  <td class="border-none px-4 dark:text-gray-50">
+                    GTBank
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Account Number</td>
+                  <td class="border-none px-4 dark:text-gray-50 font-bold">01092092929</td>
+                </tr>
+                <tr>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Account Name</td>
+                  <td class="border-none px-4 dark:text-gray-50">Justin Bieber</td>
+                </tr>
+                <tr>
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Routing Number</td>
+                  <td class="border-none px-4 dark:text-gray-50">83939</td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <!-- Video Aspect Ratio Title-->
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Payment Status</span>
+                </div>
+              </div>
+              <table class="table-auto border-none w-[60%]">
+                <tbody>
+                <tr class="">
+                  <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="status">Status</label></td>
+                  <td class="border-none px-4 font-bold text-xl dark:text-gray-50">
+                      <select id="status" name="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[50%] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>Choose a Status</option>
+                        <option value="1">Paid</option>
+                        <option value="2">Unpaid</option>
+                        <option value="3">Refund</option>
+                        <option value="4">Cancelled</option>
+                      </select>
+
+
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Update Status
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+  function index() {
+    return {
+      pageTitle: 'Payment: 8319',
+
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+      amount: 69000,
+    }
+  }
+</script>

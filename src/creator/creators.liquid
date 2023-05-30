@@ -15,7 +15,9 @@ description: "Creators Page"
     <div
       class="p-5 mb-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
       <p class="text-center text-gray-400 dark:text-gray-300">You have not posted any videos. To get started, upload your first video</p>
-      <a href="/creator/add-task"
+      <a  href="#"
+          data-modal-target="upload-video-modal"
+          data-modal-toggle="upload-video-modal"
         class="mt-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
         Upload Video
       </a>
@@ -28,33 +30,26 @@ description: "Creators Page"
 <div class="px-3 pt-3 pb-6">
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-      <div class="flex items-center gap-4 px-4 py-2">
-        <img class="w-10 h-10 rounded-full" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
-        <div class="font-medium dark:text-white">
-          <p>Jese Leos</p>
-          <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-star"></i>3.5</span>
-        </div>
+      <div class="flex justify-between items-center px-4 pt-3">
+        <p class="text-gray-900 text-sm font-bold dark:text-gray-50">Uploaded: <span class="text-xs font-normal opacity-80 dark:text-gray-200">23 March 2023 7:09PM</span></p>
       </div>
-
-      <div class="px-4 py-2">
+      <div class="px-4 py-4">
         <video src="https://static.billo.app/user-content/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.mov"
-        poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
-        class="w-full aspect-[3/4] rounded-lg object-cover" controls>
+               poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
+               class="w-full aspect-[3/4] rounded-lg object-cover" controls>
         </video>
       </div>
-
       <div class="flex items-center p-5 justify-evenly">
 
         <div class="flex flex-col justify-center action-button">
           <div class="flex justify-center">
             <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
-              class="text-white !m-0 bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">
+                    class="text-white !m-0 bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800">
               <i class="w-5 h-5 text-sm fa-solid fa-xmark"></i>
             </button>
           </div>
-          <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
-            class="font-medium text-red-600 dark:text-red-500">
+          <a data-modal-target="delete-modal" data-modal-toggle="delete-modal" href="#"
+             class="font-medium text-red-600 dark:text-red-500">
             <span class="text-center text-pink-600">Delete</span>
           </a>
         </div>
@@ -97,6 +92,69 @@ description: "Creators Page"
     </div>
   </div>
 </div>
+
+<!--- Modal Dialog --->
+<div
+        id="upload-video-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="upload-video-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Upload Video</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()"
+        >
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <div class="col-span-6 sm:col-span-3">
+
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="uploadImage">Upload Video</label>
+                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="uploadImageHelp" id="uploadImage" type="file">
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-300" id="uploadImageHelp">MP4 or AVI (MAX. Width x Height).</p>
+
+              </div>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Category
+              </label>
+              <select id="category"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a Category</option>
+                <option value="1">Sports</option>
+                <option value="2">Lifestyle</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <div class="flex items-center mb-4">
+                <input id="postCreatorsHub" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="postCreatorsHub" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Post to Creators Hub</label>
+              </div>
+            </div>
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Upload Video
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
   function index() {
     return {

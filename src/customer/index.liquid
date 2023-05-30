@@ -17,7 +17,7 @@ description: "Dashboard Page"
           </div>
 
           <div class="items-baseline px-2.5 py-0.5 text-sm font-medium md:mt-2 lg:mt-0">
-            <a href="/customer/add-task/"
+            <a href="/customer/new-task/"
               class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
               New Task
             </a>
@@ -144,7 +144,7 @@ description: "Dashboard Page"
                       Jack Black
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      <a href="/" class="text-blue-600 hover:text-blue-800">6865</a>
+                      <a href="/customer/task" class="text-blue-600 hover:text-blue-800">6865</a>
                     </th>
                     <td class="px-6 py-4">
                       <span x-data="head" x-text="currency"></span>30,000
@@ -463,6 +463,8 @@ description: "Dashboard Page"
   function index() {
     return {
       pageTitle: 'Dashboard',
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
       user: {
         id: 1,
         firstname: 'Robert',
@@ -470,7 +472,34 @@ description: "Dashboard Page"
         email: 'jessepinkman@gmail.com',
         image: 'profile.jpeg',
         kyc: true
-      }
+      },
+      brands: [
+        {
+          id: "uuid-2233ff",
+          name: 'Brand 1',
+          description: 'Brand 1 description',
+        },
+        {
+          id: "uuid-3kljh456kljweh",
+          name: 'Brand 2',
+          description: 'Brand 2 description',
+        }
+      ],
+      filterBrandQuery:'',
+      filterBrands() {
+        if (this.filterBrandQuery === "") return this.brands;
+        const Q = this.filterBrandQuery.toLowerCase();
+        return this.brands.filter(s=>s.name.toLowerCase().includes(Q))
+      },
+      getBrandName(index) {
+        console.log(index);
+        const i = Number(index);
+        return this.brands[i]?.name || "Choose Brand"
+      },
+      getBrandID(index) {
+        const i = Number(index);
+        return this.brands[i]?.id || ""
+      },
     }
   }
 </script>

@@ -1,30 +1,32 @@
 ---
-layout: user-dashboard-layout
+layout: creator-dashboard-layout
 title: "Task Details - Submissions"
 description: "Task Details Page"
 ---
 <div class="px-3 py-6 mt-14" x-data="head">
   <div>
     <div class="grid grid-cols-4 mb-4">
-      <h3 class="mb-5 text-2xl  col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
-      <div class="flex justify-end col-span-2 gap-4">
-        <div class="flex gap-1" x-data="index()">
-          <!-- Open a page similar to Add Task -->
-          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <span x-cloak x-html="status === 3 ? `<i class='fa-solid fa-pen'></i>` : `<i class='fa-solid fa-download'></i>`"></span>
+      <h3 class="mb-5 text-2xl col-span-2 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-2 gap-1">
+        <div class="flex flex-col">
+          <a      href="#"
+                  data-modal-target="upload-video-modal"
+                  data-modal-toggle="upload-video-modal"
+                  class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            Upload Video
+          </a>
+        </div>
+        <div class="flex flex-col">
+          <button type="button" class="whitespace-nowrap text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Mark as Completed
           </button>
-
-          <button x-cloak x-show="status === 3"  type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2 text-center mr-2 mb-2">
-            Delete
-          </button>
-
         </div>
       </div>
     </div>
     <div class="w-full m-auto">
       <ol class="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 bg-white border border-gray-200 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 mb-4">
         <li class="flex items-center">
-          <a href="/customer/task/1/" class="w-full flex items-center">
+          <a href="/creator/task/1/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border rounded-full shrink-0 border-gray-500 dark:border-gray-400">
               1
             </span>
@@ -33,18 +35,9 @@ description: "Task Details Page"
           </a>
         </li>
         <li class="flex items-center">
-          <a href="/customer/task/1/applications/" class="w-full flex items-center">
-            <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border  rounded-full shrink-0 border-gray-500 dark:border-gray-400">
-                2
-            </span>
-              Applications
-            </a>
-          <svg aria-hidden="true" class="w-4 h-4 ml-2 sm:ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-        </li>
-        <li class="flex items-center">
-          <a href="/customer/task/1/delivery/" class="w-full flex items-center">
+          <a href="/creator/task/1/delivery/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-gray-500 rounded-full shrink-0 dark:border-gray-400">
-                3
+                2
             </span>
               Product Delivery
           </a>
@@ -52,60 +45,34 @@ description: "Task Details Page"
         </li>
 
         <li class="flex items-center text-blue-600 dark:text-blue-500">
-          <a href="/customer/task/1/submissions/" class="w-full flex items-center">
+          <a href="/creator/task/1/submissions/" class="w-full flex items-center">
             <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs border border-blue-600 dark:border-blue-500  rounded-full shrink-0">
-                4
+                3
             </span>
             Video Submissions
             </a>
         </li>
       </ol>
-
       <!-- Posting Video -->
-      <div class="px-3 pt-3 pb-6">
-  <span
-          class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 mb-3">
-    Required creators: <b>3</b>
-  </span>
-
-        <span
-                class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400 mb-3">
-    Rejected: <b>5</b>
-  </span>
-        <span
-                class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400 mb-3">
-    Applied: <b>4</b>
-  </span>
-        <span
-                class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300 mb-3">
-    Pending: <b>9</b>
-  </span>
-
-      </div>
-
-      <div class="px-3 pt-3 pb-6">
+      <div class=" pt-3 pb-6">
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-            <div class="flex items-center gap-4 px-4 py-2">
-              <img class="w-10 h-10 rounded-full border-gray-200 border-2 shadow-sm" src="https://randomuser.me/api/portraits/men/76.jpg" alt="">
-              <div class="font-medium dark:text-white">
-                <p class="dark:text-gray-50">Jese Leos</p>
-                <div class="flex justify-between gap-2 w-full">
-                  <span class="text-xs text-gray-500 dark:text-gray-400"><i class=" mr-1 fa-solid fa-camera"></i>180</span>
-                  <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-star"></i>3.5</span>
-                  <span class="text-xs text-gray-500 dark:text-gray-400"><i class="mr-1 fa-solid fa-shield-heart"></i>98%</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="px-4 py-2">
+            <div class="px-4 py-4">
               <video src="https://static.billo.app/user-content/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.mov"
                      poster="https://static.billo.app/user-content-thumbs/1674442199013-45e338d79086e4d7dc8f-video_output_542A17AF_0C8A_43C2_80C6_B3779041FDD7.jpeg"
                      class="w-full aspect-[3/4] rounded-lg object-cover" controls>
               </video>
             </div>
+            <div class="flex md:justify-between md:items-center px-4 pt-3 flex-col md:flex-row md:gap-2">
+              <p class="text-gray-900 text-lg font-bold dark:text-gray-50">Description</p>
+              <span class="text-xs opacity-80 dark:text-gray-200">23 March 2023 7:09PM</span>
 
+            </div>
+            <div class="px-4">
+              <p class="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-4">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+              </p>
+            </div>
             <div class="flex items-center p-5 justify-evenly">
 
               <div class="flex flex-col justify-center action-button">
@@ -115,26 +82,10 @@ description: "Task Details Page"
                     <i class="w-5 h-5 text-sm fa-solid fa-xmark"></i>
                   </button>
                 </div>
-                <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
+                <a data-modal-target="delete-modal" data-modal-toggle="delete-modal" href="#"
                    class="font-medium text-red-600 dark:text-red-500">
-                  <span class="text-center text-pink-600">Reject</span>
+                  <span class="text-center text-pink-600">Delete</span>
                 </a>
-
-
-              </div>
-
-              <div class="flex flex-col justify-center action-button">
-                <div class="flex justify-center">
-                  <button data-modal-target="approve-modal" data-modal-toggle="approve-modal" type="button"
-                          class="text-white !m-0 !bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
-                    <i class="w-5 h-5 text-sm fa-solid fa-check"></i>
-                  </button>
-                </div>
-                <a data-modal-target="approve-modal" data-modal-toggle="approve-modal" href="#"
-                   class="font-medium text-green-600 dark:text-green-500">
-                  <span class="text-center text-teal-600">Approve</span>
-                </a>
-
               </div>
 
             </div>
@@ -142,7 +93,64 @@ description: "Task Details Page"
         </div>
       </div>
     </div>
+  </div>
+  <!--- If no brands are created --->
+  <div class="p-5 my-4 flex flex-col items-center justify-center w-full h-[19rem] border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <p class="text-center text-gray-400 dark:text-gray-300">You have not submitted any video(s) for this task.</p>
+    <a href=""
+       class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+      Upload Video
+    </a>
+  </div>
+</div>
 
+<!--- Modal Dialog --->
+<div
+        id="upload-video-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="upload-video-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Upload Video</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()"
+        >
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <div class="col-span-6 sm:col-span-3">
+
+                  <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="uploadImage">Upload Video</label>
+                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="uploadImageHelp" id="uploadImage" type="file">
+                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-300" id="uploadImageHelp">MP4 or AVI (MAX. Width x Height).</p>
+
+              </div>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+                <label for="about" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                <textarea id="about" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe the video submission."></textarea>
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Upload Video
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -166,7 +174,8 @@ description: "Task Details Page"
         lastname: 'Pinkman',
         email: 'jessepinkman@gmail.com',
         image: 'profile.jpeg',
-        kyc: true
+        kyc: true,
+        availability: true,
       },
       amount: 69000,
       status: 3,
