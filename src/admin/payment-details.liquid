@@ -87,7 +87,11 @@ description: "Payment Details Page"
                 </tr>
                 <tr>
                   <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Account Number</td>
-                  <td class="border-none px-4 dark:text-gray-50 font-bold">01092092929</td>
+                  <td class="border-none px-4 dark:text-gray-50 font-bold">
+                    <span class="mr-2" x-text="accountNumber"></span>
+                    <span x-on:click="copy()" class="hover:cursor-pointer text-sm"><i class="fa-solid fa-copy"></i></span>
+                    <span x-show="showToast" class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">Copied!</span>
+                  </td>
                 </tr>
                 <tr>
                   <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50">Account Name</td>
@@ -161,6 +165,17 @@ description: "Payment Details Page"
         kyc: true
       },
       amount: 69000,
+      accountNumber: '01092092929',
+      showToast: false,
+      copy() {
+        this.showToast = true;
+        navigator.clipboard.writeText(this.accountNumber).then(
+                () => {
+                  setTimeout(() => {
+                    this.showToast = false;
+                  }, 1000);
+                });
+      }
     }
   }
 </script>
