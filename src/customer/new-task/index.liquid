@@ -61,7 +61,7 @@ description: "Add Task Page"
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Your Product(s)</span>
                 </div>
               </div>
-              <a href="/customer/brand-details" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+              <a data-modal-target="add-products-modal" data-modal-toggle="add-products-modal" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 mb-3 hover:cursor-pointer">
                 + Add Product
               </a>
               <!-- Products Cards-->
@@ -263,12 +263,12 @@ description: "Add Task Page"
               </div>
               <div class="flex">
                 <button x-on:click="task.noOfVideos--" type="button" class="mr-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                  <i class="fa-solid w-5 h-5 relative top-1 fa-minus"></i>
+                  <i class="fa-solid w-5 h-5  fa-minus"></i>
                 </button>
                 <label for="noOfVideos"></label>
                 <input id="noOfVideos" x-model="task.noOfVideos" type="text" inputmode="numeric" class="w-12 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1">
                 <button x-on:click="task.noOfVideos++" type="button" class="ml-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                  <i class="fa-solid w-5 h-5 relative top-1 fa-plus"></i>
+                  <i class="fa-solid w-5 h-5  fa-plus"></i>
                 </button>
               </div>
             </div>
@@ -295,12 +295,12 @@ description: "Add Task Page"
               </div>
               <div class="flex">
                 <button x-on:click="task.noOfVideosRevisions--" type="button" class="mr-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                  <i class="fa-solid w-5 h-5 relative top-1 fa-minus"></i>
+                  <i class="fa-solid fa-minus w-5 h-5"></i>
                 </button>
                 <label for="noOfVideos"></label>
                 <input id="noOfVideos" x-model="task.noOfVideosRevisions" type="text" inputmode="numeric" class="w-12 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1">
                 <button x-on:click="task.noOfVideosRevisions++" type="button" class="ml-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                  <i class="fa-solid w-5 h-5 relative top-1 fa-plus"></i>
+                  <i class="fa-solid fa-plus w-5 h-5"></i>
                 </button>
               </div>
             </div>
@@ -323,13 +323,17 @@ description: "Add Task Page"
                   <label for="15sec"
                          class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
-                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-start mr-2"></i>15 Sec.</p>
-                      <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
-                           viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clip-rule="evenodd" />
-                      </svg>
+                        <p class="text-gray-700 dark:text-gray-50 flex items-center">
+                          <i class="fa-solid fa-hourglass-start mr-2"></i>
+                          15 Sec.
+                        </p>
+                        <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+
                     </div>
                     <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50">Included</h1>
                   </label>
@@ -340,7 +344,7 @@ description: "Add Task Page"
                   <label for="30sec"
                          class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
-                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-half mr-2"></i>30 Sec.</p>
+                      <p class="text-gray-700 dark:text-gray-50 flex items-center"><i class="fa-solid fa-hourglass-half mr-2"></i>30 Sec.</p>
                       <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -357,7 +361,7 @@ description: "Add Task Page"
                   <label for="60sec"
                          class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
                     <div class="flex items-center justify-between">
-                      <p class="text-gray-700 dark:text-gray-50"><i class="fa-solid fa-hourglass-end mr-2"></i>60 Sec.</p>
+                      <p class="text-gray-700 dark:text-gray-50 flex items-center"><i class="fa-solid fa-hourglass-end mr-2"></i>60 Sec.</p>
                       <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
@@ -373,7 +377,7 @@ description: "Add Task Page"
             </div>
 
             <!-- Video Scene -->
-            <div class="col-span-6 sm:col-span-6">
+            <div x-show="task.videoType !== '4'" class="col-span-6 sm:col-span-6">
               <div class="mb-3 relative">
                 <div aria-hidden="true" class="absolute inset-0 flex items-center">
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
@@ -385,7 +389,7 @@ description: "Add Task Page"
               </div>
 
               <!-- Video Duration Cards -->
-              <div x-show="task.videoType !== '4'" class="mb-[3rem]">
+              <div class="mb-[3rem]">
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Additional details</label>
                 <p class="dark:text-gray-50 my-3 text-sm">Anything that would help the creator deliver a perfect video</p>
                 <textarea id="message" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
@@ -632,7 +636,17 @@ description: "Add Task Page"
                 <div class="flex flex-col justify-center p-4">
                   <h2 class="text-2xl font-bold dark:text-gray-50 mb-3">Get 4 Authentic Photos</h2>
                   <p class="dark:text-gray-50 mb-5">Each creator that you will work with will produce authentic photos for thumbnails of your posts in your social media channels or your website.</p>
-                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>45,000<span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
+                  <div class="flex mb-3">
+                    <button x-on:click="task.noOfPhotos--" type="button" class="mr-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                      <i class="fa-solid w-5 h-5  fa-minus"></i>
+                    </button>
+                    <label for="noOfVideos"></label>
+                    <input id="noOfVideos" x-model="task.noOfPhotos" type="text" inputmode="numeric" class="w-12 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1">
+                    <button x-on:click="task.noOfPhotos++" type="button" class="ml-2 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                      <i class="fa-solid w-5 h-5  fa-plus"></i>
+                    </button>
+                  </div>
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency + task.noOfPhotos * noOfAuthPhotosPrice "></span><span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
                   <div>
                     <button type="button" x-on:click="task.authPhotos = !task.authPhotos" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
                       <span x-html="task.authPhotos ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
@@ -654,33 +668,6 @@ description: "Add Task Page"
                   <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
                 </div>
                 <div class="relative flex justify-start">
-                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creators Add-on</span>
-                </div>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-[3rem]">
-                <div>
-                  <img src="https://static.billo.app/public/content-examples/photos_bundle_web.png" class="w-[80%]" alt="image-1">
-                </div>
-                <div class="flex flex-col justify-center p-4">
-                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3">Post to Creators Social Media</h2>
-                  <p class="dark:text-gray-50 mb-5">Each creator that you will work with will produce authentic photos for thumbnails of your posts in your social media channels or your website.</p>
-                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>15,000<span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
-                  <div>
-                    <button type="button" x-on:click="task.creatorSocial = !task.creatorSocial" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
-                      <span x-html="task.creatorSocial ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
-                    </button>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-span-6 sm:col-span-6">
-              <div class="mb-3 relative">
-                <div aria-hidden="true" class="absolute inset-0 flex items-center">
-                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
-                </div>
-                <div class="relative flex justify-start">
                   <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creator Criteria</span>
                 </div>
               </div>
@@ -690,10 +677,10 @@ description: "Add Task Page"
                          class="peer hidden [&:checked_+_label_svg]:block" checked />
                   <label for="regularCreator"
                          class="block p-4 text-sm font-medium bg-white border border-gray-100 rounded-lg shadow-sm cursor-pointer hover:border-gray-200 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700 dark:text-gray-50">
-                    <div class="flex  justify-between">
+                    <div class="flex justify-between">
                       <div>
                         <p class="text-gray-700 dark:text-gray-50 font-bold mb-2">Regular Creators</p>
-                        <p class="text-gray-500 dark:text-gray-100">Beginner creators eager to start their career, usually filming on their smartphone</p>
+                        <p class="text-gray-500 dark:text-gray-100 !whitespace-normal md:whitespace-nowrap">Beginner creators eager to start their career, usually filming on their smartphone</p>
                       </div>
                       <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 20 20" fill="currentColor">
@@ -713,7 +700,7 @@ description: "Add Task Page"
                     <div class="flex  justify-between">
                       <div>
                         <p class="text-gray-700 dark:text-gray-50 font-bold mb-2">Premium Creators</p>
-                        <p class="text-gray-500 dark:text-gray-100">Handpicked selection of top-rated skilled creators with superior experience</p>
+                        <p class="text-gray-500 dark:text-gray-100 !whitespace-normal md:whitespace-nowrap">Handpicked selection of top-rated skilled creators with superior experience</p>
                       </div>
                       <svg class="hidden w-5 h-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
                            viewBox="0 0 20 20" fill="currentColor">
@@ -725,7 +712,6 @@ description: "Add Task Page"
                     <h1 class="mt-1 text-gray-900 text-2xl font-bold dark:text-gray-50"><span x-text="currency"></span>56,000<span class="text-xs font-normal">/Video</span></h1>
                   </label>
                 </div>
-
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="col-span-2 sm:col-span-2">
@@ -782,15 +768,67 @@ description: "Add Task Page"
                           placeholder="E.g. Can shoot in car, should have a pet"
                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 </div>
+                <div class="col-span-2 sm:col-span-2">
+                  <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Preferred Location</h3>
+                </div>
+
+                <div class="col-span-1 sm:col-span-1">
+                  <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Country
+                  </label>
+                  <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="Any">Any</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Uganda">Uganda</option>
+                  </select>
+                </div>
+                <div class="col-span-1 sm:col-span-1">
+                  <label for="stateRegion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    State/Region
+                  </label>
+                  <select id="stateRegion" name="state-region" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="Any">Any</option>
+                    <option value="State 1">State 1</option>
+                    <option value="State 2">State 2</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="col-span-6 sm:col-span-6">
+              <div class="mb-3 relative">
+                <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                </div>
+                <div class="relative flex justify-start">
+                  <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creators Add-on</span>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-[3rem]">
+                <div>
+                  <img src="https://static.billo.app/public/content-examples/photos_bundle_web.png" class="w-[80%]" alt="image-1">
+                </div>
+                <div class="flex flex-col justify-center p-4">
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3">Post to Creators Social Media</h2>
+                  <p class="dark:text-gray-50 mb-5">Each creator that you will work with will produce authentic photos for thumbnails of your posts in your social media channels or your website.</p>
+                  <h2 class="text-2xl font-bold dark:text-gray-50 mb-3"><span x-text="currency"></span>15,000<span class="text-sm dark:text-gray-50 font-normal">/Video</span></h2>
+                  <div>
+                    <button type="button" x-on:click="task.creatorSocial = !task.creatorSocial" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                      <span x-html="task.creatorSocial ? `<i class='fa-solid fa-check mr-1'></i> Added` : `Add`"></span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
 
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
                 Continue
               </button>
               <!-- Remove this -->
-              <a href="/customer/add-task-review">Next Page</a>
+              <a href="/customer/new-task/review">Next Page</a>
             </div>
           </div>
         </form>
@@ -809,6 +847,105 @@ description: "Add Task Page"
 </div>
 
 
+<!-- Modal -->
+<div
+        id="add-products-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-products-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Product Details</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          {% comment %}<label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{% endcomment %}
+          {% comment %}Product Image{% endcomment %}
+          {% comment %}</label>{% endcomment %}
+          <div class="flex flex-col items-center justify-center w-full">
+            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-56 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload product image</span> or drag and drop</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">PNG or JPG</p>
+              </div>
+              <input id="dropzone-file" type="file" class="hidden" />
+            </label>
+          </div>
+          <div class="grid grid-cols-6 gap-6 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="productName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Product Name
+              </label>
+              <input
+                      x-model="productName"
+                      placeholder="Sports Shoe"
+                      type="text"
+                      id="productName"
+                      name="product_name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-6 ">
+              <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Description
+              </label>
+              <input
+                      placeholder="Add Description"
+                      type="text"
+                      id="description"
+                      name="description"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="productHomepage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Product Homepage
+              </label>
+              <input
+                      x-model="productHomepage"
+                      placeholder="https://google.com"
+                      type="url"
+                      id="productHomepage"
+                      name="product_homepage"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label for="retailPrice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Retail Price
+              </label>
+              <input
+                      x-model="retailPrice"
+                      type="number"
+                      id="retailPrice"
+                      name="retail_price"
+                      spellcheck="false"
+                      step="0.01"
+
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button :disabled="retailPrice.length < 1 || productHomepage.length < 1 || productName.length < 1" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Product
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -816,7 +953,10 @@ description: "Add Task Page"
   function index() {
     return {
       pageTitle: 'Add Task',
-
+      retailPrice: "",
+      productName:"",
+      productHomepage:"",
+      noOfAuthPhotosPrice: 1500,
       task: {
         age:'',
         videoType: '1',
@@ -826,6 +966,7 @@ description: "Add Task Page"
         videAspectRatio: '1',
         authPhotos: false,
         creatorSocial: false,
+        noOfPhotos: 1,
       },
       user: {
         id: 1,
@@ -834,7 +975,36 @@ description: "Add Task Page"
         email: 'jessepinkman@gmail.com',
         image: 'profile.jpeg',
         kyc: true
-      }
+      },
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
+      brands: [
+        {
+          id: "uuid-2233ff",
+          name: 'Brand 1',
+          description: 'Brand 1 description',
+        },
+        {
+          id: "uuid-3kljh456kljweh",
+          name: 'Brand 2',
+          description: 'Brand 2 description',
+        }
+      ],
+      filterBrandQuery:'',
+      filterBrands() {
+        if (this.filterBrandQuery === "") return this.brands;
+        const Q = this.filterBrandQuery.toLowerCase();
+        return this.brands.filter(s=>s.name.toLowerCase().includes(Q))
+      },
+      getBrandName(index) {
+        console.log(index);
+        const i = Number(index);
+        return this.brands[i]?.name || "Choose Brand"
+      },
+      getBrandID(index) {
+        const i = Number(index);
+        return this.brands[i]?.id || ""
+      },
     }
   }
 </script>

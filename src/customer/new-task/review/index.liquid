@@ -321,6 +321,35 @@ description: "Add Task Review Page"
         image: 'profile.jpeg',
         kyc: true
       },
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
+      brands: [
+        {
+          id: "uuid-2233ff",
+          name: 'Brand 1',
+          description: 'Brand 1 description',
+        },
+        {
+          id: "uuid-3kljh456kljweh",
+          name: 'Brand 2',
+          description: 'Brand 2 description',
+        }
+      ],
+      filterBrandQuery:'',
+      filterBrands() {
+        if (this.filterBrandQuery === "") return this.brands;
+        const Q = this.filterBrandQuery.toLowerCase();
+        return this.brands.filter(s=>s.name.toLowerCase().includes(Q))
+      },
+      getBrandName(index) {
+        console.log(index);
+        const i = Number(index);
+        return this.brands[i]?.name || "Choose Brand"
+      },
+      getBrandID(index) {
+        const i = Number(index);
+        return this.brands[i]?.id || ""
+      },
       amount: 69000,
       payWithPaystack() {
         let handler = PaystackPop.setup({

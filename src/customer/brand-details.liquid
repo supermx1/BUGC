@@ -66,7 +66,7 @@ description: "Brands Page"
 
             <li class="mr-2" role="presentation">
               <button
-                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                class="inline-block p-4 border-b-2  rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
                 id="products-tab" data-tabs-target="#products" type="button" role="tab"
                 aria-controls="products" aria-selected="false">
                 <i class="mr-1 fa-solid fa-truck-fast"></i>
@@ -76,7 +76,7 @@ description: "Brands Page"
 
             <li class="mr-2" role="presentation">
               <button
-                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                class="inline-block p-4 border-b-2  rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
                 id="billing-history-tab" data-tabs-target="#billing-history" type="button" role="tab"
                 aria-controls="billing-history" aria-selected="false">
                 <i class="mr-1 fa-solid fa-file-circle-check"></i>
@@ -210,11 +210,11 @@ description: "Brands Page"
             aria-labelledby="products-tab">
 
             <div class="relative overflow-x-auto">
-              <div class="flex justify-end col-span-3 gap-4">
+              <div class="flex col-span-3 gap-4">
             <div class="flex flex-col">
-               <a data-modal-target="add-products-modal" data-modal-toggle="add-products-modal" href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-              Add Product
-               </a>
+              <a data-modal-target="add-products-modal" data-modal-toggle="add-products-modal" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 mb-3 hover:cursor-pointer">
+                + Add Product
+              </a>
             </div>
       </div>
               <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -549,7 +549,6 @@ description: "Brands Page"
   function index() {
     return {
       pageTitle: 'Test Brand',
-      brandOption: 'Choose Brand',
       retailPrice: "",
       productName:"",
       productHomepage:"",
@@ -561,14 +560,16 @@ description: "Brands Page"
         image: 'profile.jpeg',
         kyc: true
       },
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
       brands: [
         {
-          id: 1,
+          id: "uuid-2233ff",
           name: 'Brand 1',
           description: 'Brand 1 description',
         },
         {
-          id: 2,
+          id: "uuid-3kljh456kljweh",
           name: 'Brand 2',
           description: 'Brand 2 description',
         }

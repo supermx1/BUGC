@@ -13,12 +13,12 @@ description: "Creators Page"
   <div class="px-3 pt-3 pb-6 w-full">
     <div class="flex gap-2 mb-3">
       <div>
-        <label for="brandSearch" class="sr-only">Search</label>
+        <label for="search" class="sr-only">Search</label>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <i class="text-gray-500 fa-solid fa-magnifying-glass dark:text-gray-400"></i>
           </div>
-          <input type="text" id="userVideo" class="block w-full py-1.5 px-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Videos or Creators">
+          <input type="text" id="search" class="block w-full py-1.5 px-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Videos or Creators">
         </div>
       </div>
       <div class="flex flex-col">
@@ -42,13 +42,13 @@ description: "Creators Page"
         </div>
       </div>
       <div class="flex flex-col">
-        <button id="dropdownDefaultButton2" data-dropdown-toggle="dropdown2" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+        <button id="sortStatus" data-dropdown-toggle="dropdown2" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
           <span x-text="sortStatus"></span>
           <i class="ml-2 fa-solid fa-chevron-down"></i>
         </button>
         <!-- Dropdown menu -->
         <div id="dropdown2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton2">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="sortStatus">
             <li>
               <a href="#"  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Approved</a>
             </li>

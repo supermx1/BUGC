@@ -1,0 +1,708 @@
+---
+layout: admin-dashboard-layout
+title: "User Page"
+description: "User Details Page"
+---
+
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex flex-col">
+          <button
+                  data-modal-target="fund-modal"
+                  data-modal-toggle="fund-modal"
+                  class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Fund User
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full mb-4">
+      <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="grid md:!grid-cols-6 grid-cols-1 mb-4 !divide-gray-100 dark:!divide-gray-700  md:divide-x ">
+          <div class="col-span-2">
+              <div class="flex justify-end px-4 pt-4">
+                <button id="userDetailsDropdown" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
+                  <span class="sr-only">Open dropdown</span>
+                  <i class="fa-solid fa-ellipsis-vertical w-5 h-5"></i>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                  <ul class="py-2" aria-labelledby="userDetailsDropdown">
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Export Data</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-col items-center pb-10">
+                <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="Toby Maguire"/>
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Toby Maguire</h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">Customer</span>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">
+                  Unapproved
+                </span>
+
+                <ul class="w-[50%] divide-y divide-gray-200 dark:divide-gray-700 mt-5">
+                  <li class="pb-3 sm:pb-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Total Spent
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
+                        <span x-text="currency"></span>50,000
+                      </div>
+                    </div>
+                  </li>
+                  <li class="pb-3 pt-3 sm:pb-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Total Task
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
+                        3
+                      </div>
+                    </div>
+                  </li>
+                  <li class="pb-3 pt-3 sm:pb-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Videos Received
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
+                        12
+                      </div>
+                    </div>
+                  </li>
+                  <li class="pb-3 pt-3 sm:pb-4">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Total Referrals
+                        </p>
+                      </div>
+                      <div class="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
+                        12
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+
+              </div>
+
+
+          </div>
+          <div class="col-span-4 md:pl-5">
+            <form
+                    action="#"
+                    method="POST"
+                    class="space-y-6 rounded-lg"
+                    x-data="index()">
+
+              <div class="grid grid-cols-6 gap-6 mt-2">
+                <div class="col-span-6 sm:col-span-6">
+                  <div class="mb-3 relative">
+                    <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                      <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-start">
+                      <span class="text-xl font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white"> Basic Information</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    First Name
+                  </label>
+                  <input
+                          placeholder="Your First Name"
+
+                          type="text"
+                          id="firstName"
+                          name="first_name"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Last Name
+                  </label>
+                  <input
+                          placeholder="Your Last Name"
+
+                          type="text"
+                          id="lastName"
+                          name="last_name"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Date of Birth
+                  </label>
+                  <input
+                          placeholder=""
+                          type="date"
+                          id="dob"
+                          name="dob"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Gender
+                  </label>
+                  <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Choose a Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+
+                <div class="col-span-6 sm:col-span-6">
+                  <div class="mb-3 relative">
+                    <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                      <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-start">
+                      <span class="text-xl font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Contact Information</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Email
+                  </label>
+                  <input
+                          placeholder="Your Email"
+                          type="email"
+                          id="email"
+                          name="email"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Phone Number
+                  </label>
+                  <input
+                          placeholder="Your Phone Number"
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-6">
+                  <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Address
+                  </label>
+                  <input
+                          type="text"
+                          id="address"
+                          name="address"
+                          spellcheck="false"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    City
+                  </label>
+                  <input
+                          type="text"
+                          id="city"
+                          name="city"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    State
+                  </label>
+                  <select id="state" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Choose a State</option>
+                    <option value="State 1">State 1</option>
+                  </select>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Country
+                  </label>
+                  <select id="country" name="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Choose a Country</option>
+                    <option value="Country 1">Country 1</option>
+                  </select>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="postalCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Postal Code
+                  </label>
+                  <input
+                          type="text"
+                          id="postalCode"
+                          name="postal_code"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+                  <button class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                    Save Profile
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <!-- Card --->
+      <!--- Tabs with Dashboard Option --->
+        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+          <ul
+            class="flex flex-wrap -mb-px text-sm font-medium text-center"
+            id="user-settings-list"
+            data-tabs-toggle="#user-settings"
+            role="tablist">
+            <!--- Tasks --->
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 rounded-t-lg"
+                id="tasks-tab"
+                data-tabs-target="#tasks"
+                type="button"
+                role="tab"
+                aria-controls="tasks"
+                aria-selected="true">
+                <i class="mr-1 fa-solid fa-list-check"></i>
+                Tasks
+              </button>
+            </li>
+            <!--- Transaction History --->
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="transaction-history-tab"
+                data-tabs-target="#transaction-history"
+                type="button"
+                role="tab"
+                aria-controls="transaction-history"
+                aria-selected="false">
+                <i class="mr-1 fa-solid fa-money-bill-transfer"></i>
+                Transaction History
+              </button>
+            </li>
+            <!--- Brands--->
+            <li class="mr-2" role="presentation">
+              <button
+                      class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                      id="brands-tab"
+                      data-tabs-target="#brands"
+                      type="button"
+                      role="tab"
+                      aria-controls="brands"
+                      aria-selected="false">
+                <i class="mr-1 fa-solid fa-copyright"></i>
+                Brands
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div id="user-settings">
+          <!--- Tasks --->
+          <div
+            class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="tasks"
+            role="tabpanel"
+            aria-labelledby="tasks-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Task ID
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Status
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Videos
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Price
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Products
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Uploaded
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Approved
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Accepted
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white whitespace-nowrap w-[25%]">
+                    <a href="/admin/task/1" class="text-blue-600 hover:text-blue-800">7997</a>
+                  </td>
+                  <td class="px-6 py-4">
+                      <span
+                              class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-300 border border-yellow-300">Pending</span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    2
+                  </td>
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-data="head" x-text="currency"></span>45,000
+                  </td>
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                            class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+                        <i class="mr-1 fa-solid fa-truck-fast"></i>1 of 2
+                      </span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                            class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
+                        <i class="mr-1 fa-solid fa-play"></i>2 of 2
+                      </span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span data-tooltip-target="date-tooltip1"
+                            class="bg-red-100 text-red-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400">
+                        <i class="mr-1 fa-solid fa-check"></i>0 of 2
+                      </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap w-[25%]">
+                    27 March 2023
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
+                          class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span
+                          class="font-semibold text-gray-900 dark:text-white">1000</span></span>
+              <ul class="inline-flex items-center -space-x-px">
+                <li>
+                  <a href="#"
+                     class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Previous</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                </li>
+                <li>
+                  <a href="#" aria-current="page"
+                     class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Next</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!--- Transaction History --->
+          <div
+            class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="transaction-history"
+            role="tabpanel"
+            aria-labelledby="transaction-history-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Date
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Description
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Amount
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Action
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    27 March 2023
+                  </td>
+                  <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Paid fot Task 1
+                  </td>
+                  <td class="px-6 py-4">
+                    <span x-text="currency"></span>7,000
+
+                  </td>
+                  <td class="px-6 py-4">
+                    <a href="#" class="mr-3 font-medium text-green-600 dark:text-blue-500 hover:underline">Print PDF</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
+                          class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span
+                          class="font-semibold text-gray-900 dark:text-white">1000</span></span>
+              <ul class="inline-flex items-center -space-x-px">
+                <li>
+                  <a href="#"
+                     class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Previous</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                </li>
+                <li>
+                  <a href="#" aria-current="page"
+                     class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                </li>
+                <li>
+                  <a href="#"
+                     class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <span class="sr-only">Next</span>
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!--- Brands --->
+          <div
+                  class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                  id="brands"
+                  role="tabpanel"
+                  aria-labelledby="brands-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Brand Name
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Country
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Content Units Order
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Content Units Completed
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Date Created
+                  </th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+
+                      <div class="flex items-center">
+                        <img
+                                class="object-cover w-6 h-6 mr-1 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                src="/assets/img/favicon.png"
+                                alt="brand-logo">
+                        Test Brand
+                      </div>
+
+                  </td>
+
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Nigeria
+                  </td>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    12
+                  </td>
+                  <td  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-data="head"></span>0
+                  </td>
+
+                  <td class="px-6 py-4">
+                    27 March 2023
+                  </td>
+
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--- Modal --->
+<div
+        x-data="head"
+        id="fund-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="fund-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Fund User's Wallet</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="userIDEmail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                User ID
+              </label>
+              <input type="text" id="userIDEmail" placeholder="Enter User ID or Email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="criteriaAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount(<span x-text="currency"></span>)
+              </label>
+              <input type="number" id="criteriaAmount" placeholder="1000" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="reason" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Reason</label>
+              <textarea id="reason"  rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a message here..."></textarea>
+            </div>
+
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Fund User
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'Toby Maguire',
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+      videoTypeFeatures: [],
+      addVideoTypeFeatures(){
+        this.videoTypeFeatures.push({
+          feature: ''
+        })
+      },
+      removeVideoTypeFeatures(index){
+        this.videoTypeFeatures.splice(index, 1)
+      },
+      inHouseServiceFeatures: [],
+      addInHouseServiceFeatures(){
+        this.inHouseServiceFeatures.push({
+          feature: ''
+        })
+      },
+      removeInHouseServiceFeatures(index){
+        this.inHouseServiceFeatures.splice(index, 1)
+      },
+    }
+  }
+</script>

@@ -23,11 +23,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
-    <script src="https://kit.fontawesome.com/674de53dc6.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>-->
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900 !m-0" x-data="index()">
@@ -154,7 +154,7 @@
                                         <input x-model="brandOption" :id="i" name="brand" type="radio" :value="i" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                     </div>
                                     <div class="ml-2 text-sm">
-                                        <label :for="brand.id" class="font-medium text-gray-900 dark:text-gray-300">
+                                        <label :for="i" class="font-medium text-gray-900 dark:text-gray-300">
                                             <span x-text="brand.name"></span>
                                             <p class="text-xs font-normal text-gray-500 dark:text-gray-300" x-text="brand.description"></p>
                                         </label>
@@ -224,7 +224,7 @@
                     <li>
                         <a href="/customer/brands"
                             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-50 dark:hover:bg-gray-700">
-                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-regular fa-copyright dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
+                            <i class="flex-shrink-0 w-6 text-gray-500 transition duration-75 fa-solid fa-copyright dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"></i>
                             <span class="ml-3">Brands</span>
                         </a>
                     </li>
@@ -236,10 +236,10 @@
                     </button>
                     <ul id="dropdown-example" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="/customer/profile/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Profile</a>
+                            <a href="/customer/profile/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-50 dark:text-white dark:hover:bg-gray-700">Profile</a>
                         </li>
                         <li>
-                            <a href="/customer/payments/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Payments</a>
+                            <a href="/customer/payments/" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-50 dark:text-white dark:hover:bg-gray-700">Payments</a>
                         </li>
                     </ul>
                 </li>              

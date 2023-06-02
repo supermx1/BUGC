@@ -1,0 +1,95 @@
+---
+layout: admin-dashboard-layout
+title: "API Keys Settings"
+description: "API Keys Settings Page"
+---
+
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl col-span-4 md:col-span-3 font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex md:justify-end col-span-4 md:col-span-1 gap-1">
+        <button type="submit" class="whitespace-nowrap flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+          Update Settings
+        </button>
+      </div>
+    </div>
+
+  <div class="w-full m-auto">
+    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-3">
+      <form
+              id=""
+              action="#"
+              method="POST"
+              class="space-y-6 rounded-lg"
+              x-data="index()">
+
+        <div class="grid grid-cols-6 gap-6 mt-2">
+          <div class="col-span-6 sm:col-span-6">
+            <div class="mb-3 relative">
+              <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+              </div>
+              <!-- Video Aspect Ratio Title-->
+              <div class="relative flex justify-start">
+                <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Payment Gateway Keys</span>
+              </div>
+            </div>
+            <table class="table-auto border-none w-[60%]">
+              <tbody>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="">Active</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 flex gap-4">
+                  <label class="relative inline-flex items-center cursor-pointer mr-3">
+                    <input type="checkbox" x-model="keyStatus" value="" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <span class="ml-3 text-sm font-medium " :class="{'text-gray-900 dark:text-gray-300': keyStatus, 'text-red-900 dark:text-red-300': !keyStatus }" x-text="keyStatus ? 'Active' : 'Inactive'" x-cloak></span>
+                  </label>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="publicKey">Public Key</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                    <input id="publicKey" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="privateKey">Private Key</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                  <input id="privateKey" type="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+              Update Settings
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'API Keys Settings',
+      keyStatus: true,
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+    }
+  }
+</script>

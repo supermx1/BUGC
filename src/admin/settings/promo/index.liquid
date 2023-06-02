@@ -1,0 +1,178 @@
+---
+layout: admin-dashboard-layout
+title: "Promo Settings"
+description: "Promo Settings Page"
+---
+
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex flex-col">
+          <button data-modal-target="add-pricing-modal"
+                  data-modal-toggle="add-pricing-modal"
+                  class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Add Pricing
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <!-- Card --->
+        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"> <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Title
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Description
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Expires
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    User Group
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Action
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Promo 1
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Promo Description Goes Here!
+                  </th>
+                  <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    27 March 2024
+                  </td>
+                  <td class="px-6 py-4">
+                    <span data-tooltip-target="date-tooltip1"
+                          class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+                          Customer
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <a
+                            data-modal-target="add-promo-modal"
+                            data-modal-toggle="add-promo-modal"
+                            href="#"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
+                    <a
+                            href="#"
+                            class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--- Promo --->
+<div
+        x-data="head"
+        id="add-pricing-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-pricing-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Create Promo</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Title
+              </label>
+              <input type="text" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+              <textarea id="description"  rows="2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a message here..."></textarea>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="expiryDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Expiry Date
+              </label>
+              <input type="date" id="expiryDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="expiryDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Who Can See This Promo?
+              </label>
+              <select type="date" id="expiryDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="1">Customer</option>
+                <option value="2">Creator</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Create Promo
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'Promo Settings',
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+      videoTypeFeatures: [],
+      addVideoTypeFeatures(){
+        this.videoTypeFeatures.push({
+          feature: ''
+        })
+      },
+      removeVideoTypeFeatures(index){
+        this.videoTypeFeatures.splice(index, 1)
+      },
+      inHouseServiceFeatures: [],
+      addInHouseServiceFeatures(){
+        this.inHouseServiceFeatures.push({
+          feature: ''
+        })
+      },
+      removeInHouseServiceFeatures(index){
+        this.inHouseServiceFeatures.splice(index, 1)
+      },
+    }
+  }
+</script>

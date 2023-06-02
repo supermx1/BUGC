@@ -1,0 +1,749 @@
+---
+layout: admin-dashboard-layout
+title: "Task Settings"
+description: "Task Settings Page"
+---
+
+<div class="px-3 py-6 mt-14" x-data="head">
+  <div>
+    <div class="grid grid-cols-4 mb-4">
+      <h3 class="mb-5 text-2xl font-bold leading-6 text-gray-900 dark:text-gray-50" x-text="pageTitle"></h3>
+      <div class="flex justify-end col-span-3 gap-4">
+        <div class="flex flex-col">
+          <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+            Update Settings
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <!-- Card --->
+      <!--- Tabs with Dashboard Option --->
+        <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"> <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+          <ul
+            class="flex flex-wrap -mb-px text-sm font-medium text-center"
+            id="task-settings-list"
+            data-tabs-toggle="#task-settings"
+            role="tablist">
+            <!--- Video Type --->
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 rounded-t-lg"
+                id="video-type-tab"
+                data-tabs-target="#video-type"
+                type="button"
+                role="tab"
+                aria-controls="video-type"
+                aria-selected="true">
+                <i class="mr-1 fa-solid fa-photo-film"></i>
+                Video Type
+              </button>
+            </li>
+            <!--- Video Duration --->
+            <li class="mr-2" role="presentation">
+              <button
+                class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                id="video-duration-tab"
+                data-tabs-target="#video-duration"
+                type="button"
+                role="tab"
+                aria-controls="video-duration"
+                aria-selected="false">
+                <i class="mr-1 fa-solid fa-stopwatch"></i>
+                Video Duration
+              </button>
+            </li>
+            <!--- In-house Services --->
+            <li class="mr-2" role="presentation">
+              <button
+                      class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                      id="in-house-services-tab"
+                      data-tabs-target="#in-house-services"
+                      type="button"
+                      role="tab"
+                      aria-controls="in-house-services"
+                      aria-selected="false">
+                <i class="mr-1 fa-solid fa-house-circle-check"></i>
+                In-house Services
+              </button>
+            </li>
+            <!--- Creator Criteria --->
+            <li class="mr-2" role="presentation">
+              <button
+                      class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                      id="creator-criteria-tab"
+                      data-tabs-target="#creator-criteria"
+                      type="button"
+                      role="tab"
+                      aria-controls="creator-criteria"
+                      aria-selected="false">
+                <i class="mr-1 fa-solid fa-wand-magic-sparkles"></i>
+                Creator Criteria
+              </button>
+            </li>
+
+
+          </ul>
+        </div>
+        <div id="task-settings">
+          <!--- Video Type --->
+          <div
+            class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="video-type"
+            role="tabpanel"
+            aria-labelledby="video-type-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <a data-modal-target="add-video-type-modal" data-modal-toggle="add-video-type-modal" href="#" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Video Type
+              </a>
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">
+                      Video Type
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Amount
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Sample Url
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      TikTok
+                    </th>
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <span x-text="currency"></span> 45,000
+                    </th>
+                    <td class="px-6 py-4">
+                      <a href="https://youtube.com">https://youtube.com</a>
+                    </td>
+                    <td class="px-6 py-4">
+                      <a
+                              data-modal-target="add-video-type-modal"
+                              data-modal-toggle="add-video-type-modal"
+                              href="#"
+                              class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
+                      <a
+                        href="#"
+                        class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--- Video Duration --->
+          <div
+            class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+            id="video-duration"
+            role="tabpanel"
+            aria-labelledby="video-duration-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <a data-modal-target="add-video-duration-modal" data-modal-toggle="add-video-duration-modal" href="#" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Video Duration
+              </a>
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Duration
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Amount
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Action
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    TikTok
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-text="currency"></span> 45,000
+                  </th>
+                  <td class="px-6 py-4">
+                    <a
+                            data-modal-target="add-video-duration-modal"
+                            data-modal-toggle="add-video-duration-modal"
+                            href="#"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
+                    <a
+                            href="#"
+                            class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--- In-house Services --->
+          <div
+                  class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                  id="in-house-services"
+                  role="tabpanel"
+                  aria-labelledby="in-house-services-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <a data-modal-target="add-in-house-service-modal" data-modal-toggle="add-in-house-service-modal" href="#" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add In-house Service
+              </a>
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Title
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Amount
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Description
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Popular
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Action
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    TikTok
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-text="currency"></span> 45,000
+                  </th>
+                  <td class="px-6 py-4">
+                    <a href="https://youtube.com">https://youtube.com</a>
+                  </td>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span data-tooltip-target="date-tooltip1" class="bg-green-100 text-green-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
+                        Yes
+                      </span>
+                  </th>
+                  <td class="px-6 py-4">
+                    <a
+                            data-modal-target="add-in-house-service-modal"
+                            data-modal-toggle="add-in-house-service-modal"
+                            href="#"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
+                    <a
+                            href="#"
+                            class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--- Creator Criteria --->
+          <div
+                  class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                  id="creator-criteria"
+                  role="tabpanel"
+                  aria-labelledby="creator-criteria-tab">
+            <!--- Table Start --->
+            <div class="relative overflow-x-auto">
+              <a data-modal-target="add-creator-criteria-modal" data-modal-toggle="add-creator-criteria-modal" href="#" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Creator Criteria
+              </a>
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Title
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Amount
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Description
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Action
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Regular
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <span x-text="currency"></span>0
+                  </th>
+                  <td class="px-6 py-4">
+                    Something goes here!
+                  </td>
+                  <td class="px-6 py-4">
+                    <a
+                            data-modal-target="add-creator-criteria-modal"
+                            data-modal-toggle="add-creator-criteria-modal"
+                            href="#"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-2">Edit</a>
+                    <a
+                            href="#"
+                            class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full m-auto">
+    <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-3">
+      <form
+              id=""
+              action="#"
+              method="POST"
+              class="space-y-6 rounded-lg"
+              x-data="index()">
+
+        <div class="grid grid-cols-6 gap-4 mt-2">
+          <div class="col-span-6 sm:col-span-6">
+            <div class="mb-3 relative">
+              <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+              </div>
+              <!-- Video Aspect Ratio Title-->
+              <div class="relative flex justify-start">
+                <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Video Settings</span>
+              </div>
+            </div>
+            <table class="table-auto border-none w-[60%]">
+              <tbody>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="">No. of Videos</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 flex gap-4">
+                  <div>
+                    <label class="text-sm" for="min">Min</label>
+                    <input id="min" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <div>
+                    <label class="text-sm" for="max">Max</label>
+                    <input id="max" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="">No. of Videos Revisions</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 flex gap-4 pt-4">
+                  <div>
+                    <label class="text-sm" for="min1">Min</label>
+                    <input id="min1" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <div>
+                    <label class="text-sm" for="max1">Max</label>
+                    <input id="max1" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6">
+            <div class="mb-3 relative">
+              <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+              </div>
+              <!-- Video Aspect Ratio Title-->
+              <div class="relative flex justify-start">
+                <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Get Authentic Video Settings</span>
+              </div>
+            </div>
+            <table class="table-auto border-none w-[60%]">
+              <tbody>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="title">Title</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50">
+                    <input placeholder="Section Title" id="title" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="body">Body</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                    <textarea id="body" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Section Body"></textarea>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="amount">Amount(<span x-text="currency"></span>)</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                    <input placeholder="Amount" id="amount" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6">
+            <div class="mb-3 relative">
+              <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-200 dark:border-gray-600"></div>
+              </div>
+              <!-- Video Aspect Ratio Title-->
+              <div class="relative flex justify-start">
+                <span class="text-lg font-bold pr-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white">Creators Add-on Settings</span>
+              </div>
+            </div>
+            <table class="table-auto border-none w-[60%]">
+              <tbody>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="title1">Title</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50">
+                  <input placeholder="Section Title" id="title1" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="body1">Body</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                  <textarea id="body1" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Section Body"></textarea>
+                </td>
+              </tr>
+              <tr class="">
+                <td class="border-none font-bold py-3 whitespace-nowrap text-sm w-[25%] dark:text-gray-50"><label for="amount1">Amount(<span x-text="currency"></span>)</label></td>
+                <td class="border-none px-4 font-bold text-xl dark:text-gray-50 pt-4">
+                  <input placeholder="Amount" id="amount1" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+            <button type="submit" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+              Update Status
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Hell (Can be done in one modal, but too may conditions) -->
+<!--- Video Type --->
+<div
+        x-data="head"
+        id="add-video-type-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-video-type-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Video Type</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Video Type
+              </label>
+              <input type="text" id="videoType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoTypeAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount(<span x-text="currency"></span>)
+              </label>
+              <input type="number" id="videoTypeAmount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoTypeTitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Section Title
+              </label>
+              <input type="text" id="videoTypeTitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoTypeBody" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Section Body</label>
+              <textarea id="videoTypeBody"  rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a message here..."></textarea>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoTypeURL" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Section URL
+              </label>
+              <input type="url" id="videoTypeURL" placeholder="https://youtube.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <a  href="#" x-on:click="addVideoTypeFeatures()" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Feature
+              </a>
+            </div>
+            <template x-for="(feature, i) in videoTypeFeatures" :key="i">
+              <div class="col-span-6 sm:col-span-6">
+                <label for="videoTypeTitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  <span x-text="'Feature ' + (i+1)"></span>
+                  <a href="#" x-on:click="removeVideoTypeFeatures(i)" class="text-red-500 hover:underline ml-1 text-sm">Remove</a>
+                </label>
+                <input type="text" id="videoTypeTitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+            </template>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Video Type
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- Video Duration --->
+<div
+        x-data="head"
+        id="add-video-duration-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-video-duration-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Video Duration</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoType1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Video Type
+                <!-- <a data-modal-target="add-video-type-modal" data-modal-toggle="add-video-type-modal"  class="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                  + Add Video Type
+                </a> -->
+              </label>
+              <select id="videoType1" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="1">TikTok</option>
+                <option value="2">Instagram</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="durationTitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Duration Title
+              </label>
+              <input type="text" id="durationTitle" placeholder="30 Secs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="videoDurationAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount(<span x-text="currency"></span>)
+              </label>
+              <input type="number" id="videoDurationAmount" placeholder="0 for included" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button :disabled="recipient.length < 1 || message.length < 1" type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Video Duration
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- In-house Services --->
+<div
+        x-data="head"
+        id="add-in-house-service-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-in-house-service-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add In-house Service</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="inHouseService" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                In-house Service
+              </label>
+              <input type="text" id="inHouseService" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="inHouseServiceAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount(<span x-text="currency"></span>)
+              </label>
+              <input type="number" id="inHouseServiceAmount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="inHouseServiceURL" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Video URL
+              </label>
+              <input type="url" id="inHouseServiceURL" placeholder="https://youtube.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <div class="flex items-center mb-4">
+                <input id="markAsPopular" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="markAsPopular" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mark as Popular</label>
+              </div>
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <a  href="#" x-on:click="addInHouseServiceFeatures()" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline mb-3">
+                + Add Feature
+              </a>
+            </div>
+            <template x-for="(feature, i) in inHouseServiceFeatures" :key="i">
+              <div class="col-span-6 sm:col-span-6">
+                <label :for="'inHouseService' + i" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  <span x-text="'Feature ' + (i+1)"></span>
+                  <a href="#" x-on:click="removeInHouseServiceFeatures(i)" class="text-red-500 hover:underline ml-1 text-sm">Remove</a>
+                </label>
+                <input type="text" :id="'inHouseService' + i" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+            </template>
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Service
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- Creator Criteria --->
+<div
+        x-data="head"
+        id="add-creator-criteria-modal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-lg max-h-full">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <button
+              type="button"
+              class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-hide="add-creator-criteria-modal">
+        <i class="fa-solid fa-xmark"></i>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-gray-600 dark:text-gray-50">Add Creator Criteria</h1>
+        <form
+                action="#"
+                method="POST"
+                class="p-4 space-y-6 rounded-lg"
+                x-data="index()">
+          <div class="grid grid-cols-6 gap-4 mt-8">
+            <div class="col-span-6 sm:col-span-6">
+              <label for="criteriaTitle" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Criteria Title
+              </label>
+              <input type="text" id="criteriaTitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <div class="col-span-6 sm:col-span-6">
+              <label for="criteriaAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Amount(<span x-text="currency"></span>)
+              </label>
+              <input type="number" id="criteriaAmount" placeholder="0 for included" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+
+            <div class="col-span-6 sm:col-span-6">
+              <label for="criteriaBody" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Section Body</label>
+              <textarea id="criteriaBody"  rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a message here..."></textarea>
+            </div>
+
+
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <button type="button" class="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 disabled:bg-slate-400 dark:disabled:bg-blue-400 disabled:cursor-not-allowed">
+                Add Criteria
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function index() {
+    return {
+      pageTitle: 'Task Settings',
+      user: {
+        id: 1,
+        firstname: 'Robert',
+        lastname: 'Pinkman',
+        email: 'jessepinkman@gmail.com',
+        image: 'profile.jpeg',
+        kyc: true
+      },
+      videoTypeFeatures: [],
+      addVideoTypeFeatures(){
+        this.videoTypeFeatures.push({
+          feature: ''
+        })
+      },
+      removeVideoTypeFeatures(index){
+        this.videoTypeFeatures.splice(index, 1)
+      },
+      inHouseServiceFeatures: [],
+      addInHouseServiceFeatures(){
+        this.inHouseServiceFeatures.push({
+          feature: ''
+        })
+      },
+      removeInHouseServiceFeatures(index){
+        this.inHouseServiceFeatures.splice(index, 1)
+      },
+    }
+  }
+</script>

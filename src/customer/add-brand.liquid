@@ -80,7 +80,6 @@ description: "Add Brands Page"
   function index() {
     return {
       pageTitle: 'Add Brand',
-      brandOption: 'Choose Brand',
       user: {
         id: 1,
         firstname: 'Robert',
@@ -89,14 +88,16 @@ description: "Add Brands Page"
         image: 'profile.jpeg',
         kyc: true
       },
+      brandOption: 'Choose Brand',
+      selectedBrandIndex: 0,
       brands: [
         {
-          id: 1,
+          id: "uuid-2233ff",
           name: 'Brand 1',
           description: 'Brand 1 description',
         },
         {
-          id: 2,
+          id: "uuid-3kljh456kljweh",
           name: 'Brand 2',
           description: 'Brand 2 description',
         }
