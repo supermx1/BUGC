@@ -17,7 +17,7 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
     document.documentElement.classList.add('dark');
 } else {
     document.documentElement.classList.remove('dark');
-};
+}
 
 let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

@@ -9,29 +9,19 @@
     <meta name="twitter:description" :content="description">
     <meta name="twitter:title" :content="title">
     <meta x-data="index()" property="og:url" :content="url + pageTitle.split(' ').join('-').toLowerCase() + '.html'" />
-    <meta property="og:site_name" content="7 Express" />
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-
-    <meta property="og:image" content="/assets/img/favicon.png">
-    <meta name="twitter:image" content="/assets/img/favicon.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <meta property="og:site_name" :content="title" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 !m-0" x-data="index()">
-    <style>
-        .custom-transform {
-            transform: translate3d(0px, 148px, 0px) !important;
-        }
-    </style>
       <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
@@ -104,8 +94,7 @@
             </div>
         </div>
     </nav>
-
-    <header class="fixed w-full">
+        <header class="fixed w-full">
         <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="#" class="flex items-center">
@@ -133,10 +122,10 @@
             </div>
         </nav>
     </header>
-{{ content }}
-
-
-<footer class="bg-white dark:bg-gray-800">
+        <div x-data="head">
+            {{ content }}
+        </div>
+        <footer class="bg-white dark:bg-gray-800">
         <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
             <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
                 <div>
@@ -278,6 +267,7 @@
             </div>
         </div>
 </footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <script src="/assets/js/app.js"></script>
 </body>
